@@ -3,77 +3,131 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FixGuide — Inicio</title>
+    <!-- Hoja de estilos principal del proyecto -->
     <link rel="stylesheet" href="../css/style.css">
-    <title>Directorio de Reparación ODS 9</title>
 </head>
 <body>
-    <style>
-        #menu{
-            background-color: aqua;
-        }
-        .menu{
-            background-color: blueviolet;
-        }
-    </style>
-    <header>
-        <h1>Directorio de Reparación - iFixit Style</h1>
-        <nav id="menu" class="menu">
-            <ul>
-                <li><a href="./index.html">Principal</a></li>
-                <li><a href="./smartphone.html" target="_blank">Smartphones</a></li>
-                <li><a href="#portatiles">Portátiles</a></li>
-                <li><a href="#consolas">Consolas</a></li>
-            </ul>
+
+    <!-- HEADER -->
+    <header class="navbar">
+        <!-- Logotipo y span decorativo -->
+        <div class="logo"><strong>Fix<span>Guide</span></strong></div>
+        
+        <!-- navegación accesibilidad ARIA -->
+        <nav class="nav-links" aria-label="Navegación principal">
+            <a href="index.html" class="active">Inicio</a>
+            <a href="guias.html">Guías</a>
+            <a href="verguia.html">Ver guía</a>
+            <a href="aportar.html">Aportar</a>
         </nav>
+
+        <!-- Botón para contribuir -->
+        <div class="nav-btn">
+            <a href="aportar.html" class="btn-primary">+ Aportar</a>
+        </div>
     </header>
+
+    <!-- VISTA MAIN -->
     <main>
-        <section id="smartphones">
-            <h2>1. Smartphones</h2>
-            <article>
-                <h3>Guía de Diagnóstico Móvil</h3>
-                <p>Guía de reparación y sustitución de pantallas y baterías. Extiende la vida útil del hardware y reduce los residuos electrónicos según el ODS 9. Haz clic en la opción del menú superior para abrir la guía detallada en una pestaña nueva.</p>
-            </article>
-            <article>
-                <h3>Recurso Visual</h3>
-                <p>Vista previa del componente:</p>
-                <img src="../assets/img/smartphone.jpg" alt="Herramientas y reparación de smartphone" width="250" style="border: 2px solid #333; border-radius: 5px;">
-            </article>
+        <!-- Banner de Presentación -->
+        <section class="hero">
+            <!-- Insignia temática alineada al ODS 9 (Industria, Innovación e Infraestructura) -->
+            <span class="ods-badge">ODS 9 — EDUCACIÓN TÉCNICA SOSTENIBLE</span>
+            <h1>Repara tú mismo.<br><span class="highlight">Aprende. No deseches.</span></h1>
+            <p>Guías paso a paso para reparar portátiles, celulares y consolas.<br>Gratuitas, verificadas y en español.</p>
+            
+            <!-- Formulario de búsqueda rápida vinculado a la vista de guías -->
+            <form class="search-box" action="guias.html" method="GET">
+                <input type="text" placeholder="¿Qué dispositivo necesitas reparar hoy?" aria-label="Buscar dispositivo">
+                <button type="submit">Buscar &rarr;</button>
+            </form>
         </section>
 
-        <section id="portatiles">
-            <h2>2. Portátiles</h2>
-            <article>
-                <h3>Mantenimiento Preventivo</h3>
-                <p>Manuales de mantenimiento preventivo, actualización de memoria RAM y cambio de unidades de almacenamiento SSD.</p>
-            </article>
-            <article>
-                <h3>Soporte en Audio</h3>
-                <p>Podcast o explicación técnica en audio:</p>
-                <audio controls>
-                    <source src="../assets/audio/reparacion.mp3" type="audio/mpeg">
-                    Tu navegador no soporta el elemento de audio.
-                </audio>
-            </article>
-        </section>
+        <!-- Sección de Categorías de Dispositivos -->
+        <section class="categories-section">
+            <header class="section-title">
+                <h2>Categorías</h2>
+                <p>Selecciona el tipo de dispositivo para explorar sus guías.</p>
+            </header>
 
-        <section id="consolas">
-            <h2>3. Consolas de Videojuegos</h2>
-            <article>
-                <h3>Reparación de Hardware</h3>
-                <p>Procedimientos paso a paso para la revisión de fuentes de alimentación, sustitución de pasta térmica y limpieza.</p>
-            </article>
-            <article>
-                <h3>Videotutorial</h3>
-                <p>Videotutorial rápido de desensamblaje:</p>
-                <video width="250" controls>
-                    <source src="../assets/video/tutorial.mp4" type="video/mp4">
-                    Tu navegador no soporta el elemento de video.
-                </video>
-            </article>
+            <!-- Contenedor flexible de tarjetas de categoría -->
+            <div class="cards-container">
+                <!-- Tarjeta 1: Portátiles -->
+                <article class="category-card">
+                    <div class="card-icon" aria-hidden="true">💻</div>
+                    <h3>Portátiles</h3>
+                    <p class="card-sub">MacBook, Dell, HP, Lenovo...</p>
+                    <a href="guias.html" class="card-link">4 guías disponibles &rarr;</a>
+                </article>
+
+                <!-- Tarjeta 2: Celulares -->
+                <article class="category-card">
+                    <div class="card-icon" aria-hidden="true">📱</div>
+                    <h3>Celulares</h3>
+                    <p class="card-sub">iPhone, Samsung, Xiaomi...</p>
+                    <a href="guias.html" class="card-link">2 guías disponibles &rarr;</a>
+                </article>
+
+                <!-- Tarjeta 3: Consolas -->
+                <article class="category-card">
+                    <div class="card-icon" aria-hidden="true">🎮</div>
+                    <h3>Consolas</h3>
+                    <p class="card-sub">PlayStation, Xbox, Nintendo...</p>
+                    <a href="guias.html" class="card-link">2 guías disponibles &rarr;</a>
+                </article>
+            </div>
         </section>
     </main>
-    <footer>
-        <p>Desarrollado para Ingeniería Web I - ODS 9</p>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <!-- Columna de información de la plataforma -->
+            <div>
+                <h3>FixGuide</h3>
+                <p>Plataforma educativa de reparación electrónica sostenible. Alineada con el ODS 9 de la ONU.</p>
+                <span class="footer-meta">ODS 9 · v2.0 · 2026</span>
+            </div>
+
+            <!-- Columna de Mapa del Sitio -->
+            <nav aria-label="Mapa del sitio">
+                <h4>MAPA DEL SITIO</h4>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="guias.html">Guías</a></li>
+                    <li><a href="verguia.html">Ver guía</a></li>
+                    <li><a href="aportar.html">Aportar</a></li>
+                </ul>
+            </nav>
+
+            <!-- Columna de Categorías -->
+            <div>
+                <h4>CATEGORÍAS</h4>
+                <ul>
+                    <li>Portátiles</li>
+                    <li>Celulares</li>
+                    <li>Consolas</li>
+                </ul>
+            </div>
+
+            <!-- Columna de Estándares de Accesibilidad -->
+            <div>
+                <h4>ACCESIBILIDAD</h4>
+                <ul>
+                    <li>WCAG 2.1 AA</li>
+                    <li>Diseño adaptable</li>
+                    <li>Navegación por teclado</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Créditos de cierre de la plataforma -->
+        <div class="footer-bottom">
+            <p>© 2026 FixGuide — Contenido bajo licencia CC BY-SA 4.0</p>
+            <p>Proyecto Académico — Ingeniería Web</p>
+        </div>
     </footer>
+
 </body>
 </html>
