@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="es-CO">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explora reportes ciudadanos sobre las vías y los espacios públicos de Bogotá. Consulta su categoría, ubicación y estado de seguimiento.">
+    <meta name="theme-color" content="#0756a3">
+
+    <title>Mejora Bogotá | Explorar reportes</title>
+
+    <!-- Hoja de estilos compartida con las demás páginas -->
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <a class="skip-link" href="#contenido-principal">
+        Saltar al contenido principal
+    </a>
+
+    <!-- 1. ENCABEZADO Y NAVEGACIÓN PRINCIPAL -->
+    <header class="navbar">
+        <a class="logo" href="index.html" aria-label="Mejora Bogotá, ir al inicio">
+            <strong>Mejora <span>Bogotá</span></strong>
+            <small>ODS 11 · Ciudades y comunidades sostenibles</small>
+        </a>
+
+        <nav class="nav-links" aria-label="Navegación principal">
+            <a href="index.html">Inicio</a>
+
+            <a href="explorar.html" class="active" aria-current="page">
+                Explorar reportes
+            </a>
+
+            <a href="seguimiento.html">Seguimiento</a>
+            <a href="nosotros.html">Nosotros y ODS 11</a>
+        </nav>
+
+        <div class="nav-btn">
+            <a href="crear.html" class="btn-primary">Crear reporte</a>
+        </div>
+    </header>
+
+    <main id="contenido-principal" class="container-main" tabindex="-1">
+
+        <!-- 2. PRESENTACIÓN -->
+        <section class="explore-header section-spacing"
+                 aria-labelledby="titulo-principal">
+
+            <p class="section-label">
+                Conoce los reportes de la comunidad
+            </p>
+
+            <h1 id="titulo-principal">
+                Explorar reportes ciudadanos
+            </h1>
+
+            <p>
+                Consulta los problemas registrados en las vías y espacios públicos,
+                conoce su ubicación y revisa las novedades de cada caso.
+            </p>
+
+            <p id="aviso-demostracion" class="demo-notice" role="note">
+                <strong>Vista de demostración.</strong>
+                Los reportes, ubicaciones y fechas que aparecen son ficticios.
+                La búsqueda, los filtros y el mapa aún no están conectados.
+            </p>
+        </section>
+
+        <!-- 3. BÚSQUEDA Y FILTROS -->
+        <section class="filters-section section-spacing"
+                 aria-labelledby="titulo-filtros">
+
+            <h2 id="titulo-filtros">Buscar y filtrar reportes</h2>
+
+            <form id="formulario-filtros" class="filters-form"
+                  action="explorar.html" method="get"
+                  aria-describedby="ayuda-filtros">
+
+                <div class="form-field search-field">
+                    <label for="busqueda-reportes">
+                        Buscar por código, dirección o palabra clave
+                    </label>
+
+                    <input
+                        type="search"
+                        id="busqueda-reportes"
+                        name="q"
+                        placeholder="Ejemplo: MB-00125, Calle 67 o alumbrado"
+                        maxlength="120"
+                    >
+                </div>
+
+                <fieldset class="filters-grid">
+                    <legend>Filtros opcionales</legend>
+
+                    <div class="form-field">
+                        <label for="filtro-categoria">Categoría</label>
+
+                        <select id="filtro-categoria" name="categoria">
+                            <option value="" selected>Todas las categorías</option>
+                            <option value="baches">Baches y vías</option>
+                            <option value="semaforos">Semáforos</option>
+                            <option value="alumbrado">Alumbrado</option>
+                            <option value="senalizacion">Señalización</option>
+                            <option value="basuras">Basuras</option>
+                            <option value="andenes">Andenes</option>
+                            <option value="alcantarillado">Alcantarillado</option>
+                            <option value="otros">Otros</option>
+                        </select>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="filtro-localidad">Localidad</label>
+
+                        <select id="filtro-localidad" name="localidad">
+                            <option value="" selected>Todas las localidades</option>
+                            <option value="usaquen">Usaquén</option>
+                            <option value="chapinero">Chapinero</option>
+                            <option value="santa-fe">Santa Fe</option>
+                            <option value="san-cristobal">San Cristóbal</option>
+                            <option value="usme">Usme</option>
+                            <option value="tunjuelito">Tunjuelito</option>
+                            <option value="bosa">Bosa</option>
+                            <option value="kennedy">Kennedy</option>
+                            <option value="fontibon">Fontibón</option>
+                            <option value="engativa">Engativá</option>
+                            <option value="suba">Suba</option>
+                            <option value="barrios-unidos">Barrios Unidos</option>
+                            <option value="teusaquillo">Teusaquillo</option>
+                            <option value="los-martires">Los Mártires</option>
+                            <option value="antonio-narino">Antonio Nariño</option>
+                            <option value="puente-aranda">Puente Aranda</option>
+                            <option value="la-candelaria">La Candelaria</option>
+                            <option value="rafael-uribe-uribe">Rafael Uribe Uribe</option>
+                            <option value="ciudad-bolivar">Ciudad Bolívar</option>
+                            <option value="sumapaz">Sumapaz</option>
+                        </select>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="filtro-estado">
+                            Estado en Mejora Bogotá
+                        </label>
+
+                        <select id="filtro-estado" name="estado">
+                            <option value="" selected>Todos los estados</option>
+                            <option value="recibido">Recibido</option>
+                            <option value="en_revision">En revisión</option>
+                            <option value="revisado">Revisado por el equipo</option>
+                            <option value="en_seguimiento">En seguimiento</option>
+                            <option value="solucion_por_verificar">Solución por verificar</option>
+                            <option value="solucionado">Solucionado</option>
+                            <option value="duplicado">Duplicado</option>
+                            <option value="cerrado">Cerrado</option>
+                        </select>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="filtro-riesgo">Riesgo reportado</label>
+
+                        <select id="filtro-riesgo" name="riesgo">
+                            <option value="" selected>Todos los niveles</option>
+                            <option value="alto">Alto</option>
+                            <option value="medio">Medio</option>
+                            <option value="bajo">Bajo</option>
+                            <option value="sin_informar">Sin informar</option>
+                        </select>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="filtro-radicacion">Radicación oficial</label>
+
+                        <select id="filtro-radicacion" name="radicacion">
+                            <option value="" selected>Todos los reportes</option>
+                            <option value="con_registro">Con radicado registrado</option>
+                            <option value="sin_registro">Sin radicado registrado</option>
+                        </select>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="fecha-desde">Registrados desde</label>
+                        <input type="date" id="fecha-desde" name="desde">
+                    </div>
+
+                    <div class="form-field">
+                        <label for="fecha-hasta">Registrados hasta</label>
+                        <input type="date" id="fecha-hasta" name="hasta">
+                    </div>
+
+                    <div class="form-field">
+                        <label for="orden-reportes">
+                            Orden por fecha de registro
+                        </label>
+
+                        <select id="orden-reportes" name="orden">
+                            <option value="recientes" selected>
+                                Más recientes primero
+                            </option>
+
+                            <option value="antiguos">
+                                Más antiguos primero
+                            </option>
+                        </select>
+                    </div>
+                </fieldset>
+
+                <p id="ayuda-filtros" class="form-help">
+                    Puedes revisar las opciones del formulario, pero todavía
+                    no modifican la lista de ejemplo. El riesgo expresa
+                    la apreciación ciudadana, no una evaluación técnica oficial.
+                </p>
+
+                <div class="filter-actions">
+                    <!-- Habilitar al implementar la búsqueda y la aplicación de filtros. -->
+                    <button type="submit" class="btn-primary"
+                            aria-describedby="ayuda-filtros" disabled>
+                        Buscar reportes
+                    </button>
+
+                    <button type="reset" class="btn-secondary">
+                        Limpiar filtros
+                    </button>
+                </div>
+            </form>
+        </section>
+
+        <!-- Accesos de navegación; no son pestañas que oculten contenido. -->
+        <nav class="view-links" aria-label="Ir al mapa o a la lista de reportes">
+            <a href="#mapa-reportes">Ir al mapa</a>
+            <a href="#lista-reportes">Ir a la lista de reportes</a>
+        </nav>
+
+        <!-- 4. MAPA Y LISTADO -->
+        <div class="explore-layout section-spacing">
+
+            <section class="map-panel" aria-labelledby="titulo-mapa">
+                <h2 id="titulo-mapa">Ubicación de los reportes</h2>
+
+                <p id="ayuda-mapa">
+                    El mapa todavía no está disponible en esta demostración.
+                    Puedes consultar las direcciones en la lista de reportes.
+                </p>
+
+                <!-- Contenedor reservado para el mapa que se integrará con JavaScript. -->
+                <div id="mapa-reportes" class="map-container"
+                     tabindex="-1" aria-describedby="ayuda-mapa">
+
+                    <p class="map-placeholder">
+                        Espacio reservado para el mapa de Bogotá.
+                    </p>
+                </div>
+
+                <p class="legend-title">
+                    <strong>Leyenda prevista: riesgo reportado</strong>
+                </p>
+
+                <ul class="map-legend" aria-label="Niveles de riesgo reportado">
+                    <li>
+                        <span class="legend-dot risk-high" aria-hidden="true"></span>
+                        Alto
+                    </li>
+
+                    <li>
+                        <span class="legend-dot risk-medium" aria-hidden="true"></span>
+                        Medio
+                    </li>
+
+                    <li>
+                        <span class="legend-dot risk-low" aria-hidden="true"></span>
+                        Bajo
+                    </li>
+
+                    <li>
+                        <span class="legend-dot risk-unknown" aria-hidden="true"></span>
+                        Sin informar
+                    </li>
+                </ul>
+
+                <a href="#lista-reportes" class="text-link">
+                    Consultar los reportes en texto
+                </a>
+            </section>
+
+            <section class="results-panel"
+                     aria-labelledby="titulo-resultados"
+                     aria-describedby="aviso-demostracion">
+
+                <header class="results-header">
+                    <h2 id="titulo-resultados">Reportes de ejemplo</h2>
+
+                    <p id="resumen-resultados">
+                        Mostrando 3 reportes de demostración.
+                    </p>
+                </header>
+
+                <!-- Mensajes para anunciar resultados, carga o errores al conectar los datos. -->
+                <p id="estado-resultados" class="form-status"
+                   role="status" aria-atomic="true"></p>
+
+                <p id="error-resultados" class="form-error"
+                   role="alert" hidden></p>
+
+                <!-- Mostrar solo cuando la búsqueda real no encuentre coincidencias. -->
+                <div id="sin-resultados" class="empty-state" hidden>
+                    <p>
+                        <strong>
+                            No encontramos reportes con esos filtros.
+                        </strong>
+                    </p>
+
+                    <p>
+                        Prueba con otra palabra, localidad o intervalo de fechas.
+                    </p>
+
+                    <button type="reset"
+                            form="formulario-filtros"
+                            class="btn-secondary">
+                        Limpiar filtros
+                    </button>
+                </div>
+
+                <!-- Conservar una alternativa en texto cuando se implemente el mapa. -->
+                <ul id="lista-reportes" class="reports-list" tabindex="-1">
+
+                    <!-- Ejemplo coherente con el mostrado en seguimiento.html -->
+                    <li>
+                        <article
+                            class="report-card"
+                            aria-labelledby="titulo-mb-00125"
+                            data-codigo="MB-00125"
+                            data-categoria="alumbrado"
+                            data-localidad="chapinero"
+                            data-estado="revisado"
+                            data-riesgo="alto"
+                            data-radicacion="sin_registro"
+                            data-fecha="2026-09-13"
+                        >
+                            <header class="report-card-header">
+                                <span class="badge category-badge">
+                                    Alumbrado público
+                                </span>
+
+                                <span class="badge status-reviewed">
+                                    Revisado por el equipo
+                                </span>
+
+                                <h3 id="titulo-mb-00125">
+                                    Luminaria apagada en la Calle 67
+                                </h3>
+                            </header>
+
+                            <p>
+                                La falta de iluminación dificulta el paso de
+                                peatones durante la noche.
+                            </p>
+
+                            <dl class="report-data">
+                                <div>
+                                    <dt>Código</dt>
+                                    <dd>MB-00125</dd>
+                                </div>
+
+                                <div>
+                                    <dt>Localidad</dt>
+                                    <dd>Chapinero</dd>
+                                </div>
+
+                                <div>
+                                    <dt>Ubicación</dt>
+                                    <dd>Calle 67 con Carrera 11</dd>
+                                </div>
+
+                                <div>
+                                    <dt>Fecha de registro</dt>
+                                    <dd>
+                                        <time datetime="2026-09-13">
+                                            13 de septiembre de 2026
+                                        </time>
+                                    </dd>
+                                </div>
+
+                                <div>
+                                    <dt>Riesgo reportado</dt>
+                                    <dd class="risk-high">Alto</dd>
+                                </div>
+
+                                <div>
+                                    <dt>Radicación oficial</dt>
+                                    <dd>Sin radicado registrado</dd>
+                                </div>
+                            </dl>
+
+                            <!-- Se conserva el nombre de la página de detalle del archivo original. -->
+                            <a href="verguia.html?codigo=MB-00125"
+                               class="text-link"
+                               aria-label="Ver detalles del reporte MB-00125">
+                                Ver detalles
+                            </a>
+                        </article>
+                    </li>
+
+                    <li>
+                        <article
+                            class="report-card"
+                            aria-labelledby="titulo-mb-00126"
+                            data-codigo="MB-00126"
+                            data-categoria="baches"
+                            data-localidad="chapinero"
+                            data-estado="recibido"
+                            data-riesgo="alto"
+                            data-radicacion="sin_registro"
+                            data-fecha="2026-09-12"
+                        >
+                            <header class="report-card-header">
+                                <span class="badge category-badge">
+                                    Baches y vías
+                                </span>
+
+                                <span class="badge status-received">
+                                    Recibido
+                                </span>
+
+                                <h3 id="titulo-mb-00126">
+                                    Bache en la Carrera 7
+                                </h3>
+                            </header>
+
+                            <p>
+                                Se reporta un hueco en la calzada.
+                                Falta precisar la intersección para ubicarlo en el mapa.
+                            </p>
+
+                            <dl class="report-data">
+                                <div>
+                                    <dt>Código</dt>
+                                    <dd>MB-00126</dd>
+                                </div>
+
+                                <div>
+                                    <dt>Localidad</dt>
+                                    <dd>Chapinero</dd>
+                                </div>
+
+                                <div>
+                                    <dt>Ubicación</dt>
+                                    <dd>Carrera 7; dirección por completar</dd>
+                                </div>
+
+                                <div>
+                                    <dt>Fecha de registro</dt>
+                                    <dd>
+                                        <time datetime="2026-09-12">
+                                            12 de septiembre de 2026
+                                        </time>
+                                    </dd>
+                                </div>
+
+                                <div>
+                                    <dt>Riesgo reportado</dt>
+                                    <dd class="risk-high">Alto</dd>
+                                </div>
+
+                                <div>
+                                    <dt>Radicación oficial</dt>
+                                    <dd>Sin radicado registrado</dd>
+                                </div>
+                            </dl>
+
+                            <a href="verguia.html?codigo=MB-00126"
+                               class="text-link"
+                               aria-label="Ver detalles del reporte MB-00126">
+                                Ver detalles
+                            </a>
+                        </article>
+                    </li>
+
+                    <li>
+                        <article
+                            class="report-card"
+                            aria-labelledby="titulo-mb-00127"
+                            data-codigo="MB-00127"
+                            data-categoria="basuras"
+                            data-localidad="suba"
+                            data-estado="en_revision"
+                            data-riesgo="medio"
+                            data-radicacion="sin_registro"
+                            data-fecha="2026-09-11"
+                        >
+                            <header class="report-card-header">
+                                <span class="badge category-badge">
+                                    Basuras
+                                </span>
+
+                                <span class="badge status-reviewing">
+                                    En revisión
+                                </span>
+
+                                <h3 id="titulo-mb-00127">
+                                    Acumulación de residuos en Suba
+                                </h3>
+                            </header>
+
+                            <p>
+                                Residuos acumulados junto al andén dificultan
+                                el paso de peatones por el sector.
+                            </p>
+
+                            <dl class="report-data">
+                                <div>
+                                    <dt>Código</dt>
+                                    <dd>MB-00127</dd>
+                                </div>
+
+                                <div>
+                                    <dt>Localidad</dt>
+                                    <dd>Suba</dd>
+                                </div>
+
+                                <div>
+                                    <dt>Ubicación</dt>
+                                    <dd>Calle 145 con Carrera 91</dd>
+                                </div>
+
+                                <div>
+                                    <dt>Fecha de registro</dt>
+                                    <dd>
+                                        <time datetime="2026-09-11">
+                                            11 de septiembre de 2026
+                                        </time>
+                                    </dd>
+                                </div>
+
+                                <div>
+                                    <dt>Riesgo reportado</dt>
+                                    <dd class="risk-medium">Medio</dd>
+                                </div>
+
+                                <div>
+                                    <dt>Radicación oficial</dt>
+                                    <dd>Sin radicado registrado</dd>
+                                </div>
+                            </dl>
+
+                            <a href="verguia.html?codigo=MB-00127"
+                               class="text-link"
+                               aria-label="Ver detalles del reporte MB-00127">
+                                Ver detalles
+                            </a>
+                        </article>
+                    </li>
+                </ul>
+
+                <!-- El ejemplo contiene una sola página; ambos controles quedan inactivos. -->
+                <nav class="pagination" aria-label="Páginas de resultados">
+                    <button type="button" class="btn-secondary" disabled>
+                        Anterior
+                    </button>
+
+                    <span class="page-number" aria-current="page">
+                        Página 1 de 1
+                    </span>
+
+                    <button type="button" class="btn-secondary" disabled>
+                        Siguiente
+                    </button>
+                </nav>
+            </section>
+        </div>
+
+        <!-- 5. ACCESO A LA CREACIÓN DE REPORTES -->
+        <section class="final-cta section-spacing"
+                 aria-labelledby="titulo-crear">
+
+            <h2 id="titulo-crear">¿Quieres registrar una incidencia?</h2>
+
+            <p>
+                Antes de crear un reporte, revisa si el problema ya está registrado.
+                Si encuentras uno relacionado, consulta sus detalles para evitar duplicados.
+            </p>
+
+            <a href="crear.html" class="btn-primary">
+                Crear un reporte
+            </a>
+        </section>
+    </main>
+
+    <!-- 6. PIE DE PÁGINA COMPARTIDO -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div>
+                <h2 class="footer-brand">
+                    Mejora <span>Bogotá</span>
+                </h2>
+
+                <p>
+                    Plataforma cívica para registrar, organizar y consultar
+                    incidencias relacionadas con la infraestructura
+                    y el espacio público de Bogotá.
+                </p>
+
+                <span class="footer-meta">
+                    ODS 11 · Prototipo académico · 2026
+                </span>
+            </div>
+
+            <nav aria-label="Mapa del sitio">
+                <h3>Plataforma</h3>
+
+                <ul>
+                    <li>
+                        <a href="explorar.html" aria-current="page">
+                            Explorar reportes
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="crear.html">Crear un reporte</a>
+                    </li>
+
+                    <li>
+                        <a href="seguimiento.html">Seguimiento</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <nav aria-label="Información del proyecto">
+                <h3>Información</h3>
+
+                <ul>
+                    <li>
+                        <a href="nosotros.html">Nosotros y ODS 11</a>
+                    </li>
+
+                    <li>
+                        <a href="nosotros.html#preguntas-frecuentes">
+                            Preguntas frecuentes
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="nosotros.html#contacto">Contacto</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Estas páginas se desarrollarán con el resto del proyecto. -->
+            <nav aria-label="Información legal y accesibilidad">
+                <h3>Legal y accesibilidad</h3>
+
+                <ul>
+                    <li>
+                        <a href="privacidad.html">Política de privacidad</a>
+                    </li>
+
+                    <li>
+                        <a href="terminos.html">Términos de uso</a>
+                    </li>
+
+                    <li>
+                        <a href="accesibilidad.html">Accesibilidad</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="footer-bottom">
+            <p>
+                © 2026 Mejora Bogotá —
+                Contenido bajo licencia CC BY-SA 4.0
+            </p>
+
+            <p>
+                Mejora Bogotá no sustituye los canales oficiales
+                ni los servicios de emergencia.
+            </p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="es-CO">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Describe, ubica y documenta problemas en las vías y los espacios públicos de Bogotá mediante el formulario ciudadano de Mejora Bogotá.">
+    <meta name="theme-color" content="#0756a3">
+
+    <title>Mejora Bogotá | Crear reporte</title>
+
+    <!-- Hoja de estilos compartida con las demás páginas -->
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <a class="skip-link" href="#contenido-principal">
+        Saltar al contenido principal
+    </a>
+
+    <!-- 1. ENCABEZADO Y NAVEGACIÓN PRINCIPAL -->
+    <header class="navbar">
+        <a class="logo" href="index.html" aria-label="Mejora Bogotá, ir al inicio">
+            <strong>Mejora <span>Bogotá</span></strong>
+            <small>ODS 11 · Ciudades y comunidades sostenibles</small>
+        </a>
+
+        <nav class="nav-links" aria-label="Navegación principal">
+            <a href="index.html">Inicio</a>
+            <a href="explorar.html">Explorar reportes</a>
+            <a href="seguimiento.html">Seguimiento</a>
+            <a href="nosotros.html">Nosotros y ODS 11</a>
+        </nav>
+
+        <div class="nav-btn">
+            <a href="crear.html" class="btn-primary active" aria-current="page">
+                Crear reporte
+            </a>
+        </div>
+    </header>
+
+    <main id="contenido-principal" class="container-main" tabindex="-1">
+
+        <!-- 2. PRESENTACIÓN -->
+        <section class="create-header section-spacing" aria-labelledby="titulo-principal">
+            <p class="section-label">Participa en el cuidado de tu ciudad</p>
+            <h1 id="titulo-principal">Reportar una nueva incidencia</h1>
+            <p>
+                Cuéntanos qué ocurre, dónde está el problema y cómo afecta
+                a la comunidad. Una descripción clara facilitará su revisión.
+            </p>
+
+            <p id="aviso-prototipo" class="demo-notice" role="note">
+                <strong>Formulario de demostración.</strong>
+                Puedes explorar los campos con información de prueba.
+                El envío todavía está deshabilitado: no se guardan reportes
+                ni se remiten solicitudes a entidades.
+            </p>
+        </section>
+
+        <!-- 3. ORIENTACIONES ANTES DE COMPLETAR EL FORMULARIO -->
+        <section class="report-guidelines section-spacing" aria-labelledby="titulo-orientaciones">
+            <h2 id="titulo-orientaciones">Antes de crear un reporte</h2>
+            <ul>
+                <li>
+                    Revisa <a href="explorar.html">los reportes existentes</a>
+                    para comprobar si alguien ya registró el mismo problema.
+                </li>
+                <li>
+                    Describe un problema por reporte. Si hay varios daños
+                    diferentes, registra cada caso por separado.
+                </li>
+                <li>
+                    Indica la dirección o una referencia que permita encontrar
+                    el lugar, también si está en una zona rural.
+                </li>
+            </ul>
+
+            <p class="emergency-note">
+                <strong>¿Hay peligro inmediato para una persona?</strong>
+                Comunícate con la línea de emergencias <a href="tel:123">123</a>.
+                Toma fotografías únicamente si puedes hacerlo sin exponerte.
+            </p>
+        </section>
+
+        <!-- 4. FORMULARIO: TODOS LOS GRUPOS SE MUESTRAN EN LA MISMA PÁGINA -->
+        <section class="report-form-section section-spacing" aria-labelledby="titulo-formulario">
+            <h2 id="titulo-formulario">Completa los datos del reporte</h2>
+            <p id="ayuda-formulario">
+                Los campos que indican «obligatorio» deben completarse.
+                Las fotografías y los datos de contacto son opcionales.
+            </p>
+
+            <!--
+                Antes de habilitar el envío:
+                - Conectar action con el servicio que guardará el reporte.
+                - Validar en el servidor los campos y los archivos adjuntos.
+                - Mantener los datos de contacto fuera de la información pública.
+                - Publicar las páginas de privacidad y términos.
+                - Mostrar la confirmación solo después de guardar correctamente.
+            -->
+            <form id="formulario-reporte" class="report-form"
+                  action="crear.html" method="post" enctype="multipart/form-data"
+                  aria-labelledby="titulo-formulario"
+                  aria-describedby="ayuda-formulario aviso-prototipo">
+
+                <!-- 4.1. INFORMACIÓN DEL PROBLEMA -->
+                <section class="form-step" aria-labelledby="titulo-problema">
+                    <h3 id="titulo-problema">1. Describe el problema</h3>
+
+                    <div class="form-field">
+                        <label for="categoria">Tipo de problema (obligatorio)</label>
+                        <select id="categoria" name="categoria" required>
+                            <option value="" selected disabled>Selecciona una categoría</option>
+                            <option value="baches">Baches y vías</option>
+                            <option value="semaforos">Semáforos</option>
+                            <option value="alumbrado">Alumbrado</option>
+                            <option value="senalizacion">Señalización</option>
+                            <option value="basuras">Basuras</option>
+                            <option value="andenes">Andenes</option>
+                            <option value="alcantarillado">Alcantarillado</option>
+                            <option value="otros">Otros</option>
+                        </select>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="titulo-reporte">Título del reporte (obligatorio)</label>
+                        <input type="text" id="titulo-reporte" name="titulo"
+                               placeholder="Ejemplo: semáforo apagado en la Calle 80"
+                               minlength="10" maxlength="120" required
+                               aria-describedby="ayuda-titulo">
+                        <p id="ayuda-titulo" class="form-help">
+                            Resume el problema en una frase de entre 10 y 120 caracteres.
+                        </p>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="descripcion">Descripción (obligatorio)</label>
+                        <textarea id="descripcion" name="descripcion" rows="6"
+                                  minlength="20" maxlength="2000" required
+                                  placeholder="Explica qué observaste y cómo afecta a quienes pasan por el lugar."
+                                  aria-describedby="ayuda-descripcion"></textarea>
+                        <p id="ayuda-descripcion" class="form-help">
+                            Escribe entre 20 y 2000 caracteres. Describe lo que
+                            observaste sin incluir datos personales de otras personas.
+                        </p>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="fecha-observacion">Fecha en que lo observaste (opcional)</label>
+                        <input type="date" id="fecha-observacion" name="fecha_observacion"
+                               aria-describedby="ayuda-fecha">
+                        <p id="ayuda-fecha" class="form-help">
+                            Si no recuerdas la fecha, deja este campo vacío.
+                        </p>
+                        <!-- Comprobar que la fecha no sea futura al conectar la validación. -->
+                    </div>
+
+                    <div class="form-field">
+                        <label for="riesgo">Riesgo que observas (opcional)</label>
+                        <select id="riesgo" name="riesgo" aria-describedby="ayuda-riesgo">
+                            <option value="sin_informar" selected>No sé cómo estimarlo</option>
+                            <option value="bajo">Bajo</option>
+                            <option value="medio">Medio</option>
+                            <option value="alto">Alto</option>
+                        </select>
+                        <p id="ayuda-riesgo" class="form-help">
+                            Indica tu apreciación del riesgo de un accidente
+                            o de daño a las personas. No es una evaluación técnica oficial.
+                        </p>
+                    </div>
+                </section>
+
+                <!-- 4.2. UBICACIÓN -->
+                <section class="form-step" aria-labelledby="titulo-ubicacion">
+                    <h3 id="titulo-ubicacion">2. Indica dónde ocurre</h3>
+
+                    <div class="form-field">
+                        <label for="localidad">Localidad (obligatorio)</label>
+                        <select id="localidad" name="localidad" required>
+                            <option value="" selected disabled>Selecciona una localidad</option>
+                            <option value="usaquen">Usaquén</option>
+                            <option value="chapinero">Chapinero</option>
+                            <option value="santa-fe">Santa Fe</option>
+                            <option value="san-cristobal">San Cristóbal</option>
+                            <option value="usme">Usme</option>
+                            <option value="tunjuelito">Tunjuelito</option>
+                            <option value="bosa">Bosa</option>
+                            <option value="kennedy">Kennedy</option>
+                            <option value="fontibon">Fontibón</option>
+                            <option value="engativa">Engativá</option>
+                            <option value="suba">Suba</option>
+                            <option value="barrios-unidos">Barrios Unidos</option>
+                            <option value="teusaquillo">Teusaquillo</option>
+                            <option value="los-martires">Los Mártires</option>
+                            <option value="antonio-narino">Antonio Nariño</option>
+                            <option value="puente-aranda">Puente Aranda</option>
+                            <option value="la-candelaria">La Candelaria</option>
+                            <option value="rafael-uribe-uribe">Rafael Uribe Uribe</option>
+                            <option value="ciudad-bolivar">Ciudad Bolívar</option>
+                            <option value="sumapaz">Sumapaz</option>
+                        </select>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="direccion">Dirección o referencia del lugar (obligatorio)</label>
+                        <input type="text" id="direccion" name="direccion"
+                               placeholder="Ejemplo: Calle 100 con Carrera 15, costado norte"
+                               minlength="8" maxlength="200" required
+                               aria-describedby="ayuda-direccion">
+                        <p id="ayuda-direccion" class="form-help">
+                            Indica una dirección, una intersección o una referencia
+                            reconocible. Si no hay nomenclatura, describe cómo llegar.
+                        </p>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="barrio">Barrio o vereda (opcional)</label>
+                        <input type="text" id="barrio" name="barrio" maxlength="100">
+                    </div>
+
+                    <div class="location-tools">
+                        <p id="ayuda-mapa" class="form-help">
+                            Puedes indicar la ubicación por escrito. El mapa y
+                            el botón para usar tu ubicación todavía no están disponibles.
+                        </p>
+
+                        <button type="button" id="usar-ubicacion" class="btn-secondary"
+                                aria-describedby="ayuda-mapa" disabled>
+                            Usar mi ubicación en el mapa
+                        </button>
+
+                        <!-- Integrar un mapa sin impedir el ingreso de la dirección por escrito. -->
+                        <div id="mapa-ubicacion" class="map-container"
+                             aria-describedby="ayuda-mapa">
+                            <p class="map-placeholder">Espacio reservado para seleccionar el lugar.</p>
+                        </div>
+
+                        <!-- Completar solo cuando el usuario confirme un punto en el mapa. -->
+                        <input type="hidden" id="latitud" name="latitud" value="">
+                        <input type="hidden" id="longitud" name="longitud" value="">
+                        <p id="estado-ubicacion" class="form-status"
+                           role="status" aria-atomic="true"></p>
+                    </div>
+                </section>
+
+                <!-- 4.3. EVIDENCIA FOTOGRÁFICA -->
+                <section class="form-step" aria-labelledby="titulo-fotos">
+                    <h3 id="titulo-fotos">3. Añade fotografías si las tienes</h3>
+
+                    <div class="form-field">
+                        <label for="fotos">Fotografías del problema (opcional)</label>
+                        <input type="file" id="fotos" name="fotos" multiple
+                               accept="image/jpeg,image/png,image/webp"
+                               aria-describedby="ayuda-fotos">
+                        <p id="ayuda-fotos" class="form-help">
+                            Selecciona imágenes en formato JPG, PNG o WebP que
+                            muestren el daño y su entorno. Evita incluir rostros,
+                            documentos o información personal.
+                            En esta demostración los archivos no se suben.
+                        </p>
+                    </div>
+
+                    <!--
+                        Implementar después la vista previa y la retirada de imágenes.
+                        El atributo accept no sustituye la validación de tipo,
+                        contenido, cantidad y tamaño de los archivos en el servidor.
+                    -->
+                    <div id="vista-previa-fotos" class="photo-preview" hidden></div>
+                    <p id="estado-fotos" class="form-status"
+                       role="status" aria-atomic="true"></p>
+                </section>
+
+                <!-- 4.4. CONTACTO OPCIONAL -->
+                <section class="form-step" aria-labelledby="titulo-contacto-reporte">
+                    <h3 id="titulo-contacto-reporte">4. Datos de contacto</h3>
+
+                    <fieldset class="contact-fields" aria-describedby="ayuda-contacto">
+                        <legend>Información opcional para comunicarnos contigo</legend>
+                        <p id="ayuda-contacto" class="form-help">
+                            Puedes dejar estos campos vacíos y consultar el reporte
+                            con su código cuando el registro esté habilitado.
+                            Si proporcionas tu nombre y correo, se usarán para
+                            gestionar el reporte y no se mostrarán en su ficha pública.
+                        </p>
+
+                        <div class="form-field">
+                            <label for="nombre">Nombre (opcional)</label>
+                            <input type="text" id="nombre" name="nombre"
+                                   autocomplete="name" maxlength="100">
+                        </div>
+
+                        <div class="form-field">
+                            <label for="correo">Correo electrónico (opcional)</label>
+                            <input type="email" id="correo" name="correo"
+                                   autocomplete="email" inputmode="email"
+                                   maxlength="254" spellcheck="false"
+                                   aria-describedby="ayuda-correo">
+                            <p id="ayuda-correo" class="form-help">
+                                Servirá para contactarte si necesitamos aclarar
+                                información del reporte.
+                            </p>
+                        </div>
+                    </fieldset>
+                </section>
+
+                <!-- 4.5. REVISIÓN Y ENVÍO -->
+                <section class="form-step" aria-labelledby="titulo-envio">
+                    <h3 id="titulo-envio">5. Revisa la información</h3>
+                    <p>
+                        Comprueba la ubicación y la descripción. La ficha pública
+                        del reporte podrá incluir el problema, el lugar y las fotografías;
+                        evita escribir allí tu correo u otros datos de contacto.
+                    </p>
+
+                    <div class="form-field checkbox-field">
+                        <input type="checkbox" id="acepta-privacidad"
+                               name="acepta_privacidad" value="si" required
+                               aria-describedby="ayuda-privacidad">
+                        <label for="acepta-privacidad">
+                            He leído la <a href="privacidad.html">política de privacidad</a>
+                            y autorizo el tratamiento de los datos que proporciono
+                            para gestionar este reporte (obligatorio).
+                        </label>
+                    </div>
+
+                    <p id="ayuda-privacidad" class="form-help">
+                        La política de privacidad y los
+                        <a href="terminos.html">términos de uso</a>
+                        estarán disponibles antes de habilitar el envío de reportes reales.
+                    </p>
+
+                    <!-- Completar estos mensajes al implementar el envío. -->
+                    <p id="estado-envio" class="form-status"
+                       role="status" aria-atomic="true"></p>
+                    <p id="error-envio" class="form-error" role="alert" hidden></p>
+
+                    <p id="ayuda-envio" class="form-help">
+                        <strong>El envío aún no está disponible.</strong>
+                        Completar este formulario de prueba no crea un código
+                        de seguimiento ni una solicitud oficial.
+                    </p>
+
+                    <div class="form-actions">
+                        <button type="submit" id="enviar-reporte" class="btn-primary"
+                                aria-describedby="ayuda-envio" disabled>
+                            Enviar reporte
+                        </button>
+                        <a href="explorar.html" class="btn-secondary">Explorar reportes</a>
+                    </div>
+                </section>
+            </form>
+        </section>
+
+        <!-- 5. CONFIRMACIÓN: OCULTA HASTA RECIBIR UN REGISTRO REALMENTE GUARDADO -->
+        <section id="confirmacion-reporte" class="confirmation-card section-spacing"
+                 aria-labelledby="titulo-confirmacion" tabindex="-1" hidden>
+            <h2 id="titulo-confirmacion">Reporte registrado en Mejora Bogotá</h2>
+            <p>Guarda este código para consultar las novedades del reporte.</p>
+
+            <div class="tracking-code">
+                <label for="codigo-reporte">Código interno de seguimiento</label>
+                <output id="codigo-reporte" name="codigo" form="formulario-reporte"></output>
+            </div>
+
+            <p>
+                Este código corresponde al registro en Mejora Bogotá.
+                Si el caso se radica ante una entidad, su número de radicado
+                oficial se informará por separado en el seguimiento.
+            </p>
+            <a id="enlace-seguimiento" href="seguimiento.html" class="btn-primary">
+                Consultar seguimiento
+            </a>
+        </section>
+
+        <!-- 6. AYUDA -->
+        <section class="report-help section-spacing" aria-labelledby="titulo-ayuda">
+            <h2 id="titulo-ayuda">¿Qué pasará cuando habilitemos los reportes?</h2>
+            <ol>
+                <li>Recibirás un código interno cuando el reporte se guarde correctamente.</li>
+                <li>El equipo revisará la información y si ya existe un caso similar.</li>
+                <li>
+                    Si se presenta una solicitud ante una entidad, el seguimiento
+                    indicará a quién se dirigió y el radicado obtenido.
+                </li>
+                <li>Podrás consultar las respuestas y las novedades registradas.</li>
+            </ol>
+            <p>
+                Registrar un reporte no garantiza una intervención ni un plazo
+                de solución. Para conocer más sobre el proyecto, consulta las
+                <a href="nosotros.html#preguntas-frecuentes">preguntas frecuentes</a>.
+            </p>
+        </section>
+    </main>
+
+    <!-- 7. PIE DE PÁGINA -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div>
+                <h2 class="footer-brand">Mejora <span>Bogotá</span></h2>
+                <p>
+                    Plataforma cívica para registrar, organizar y consultar
+                    incidencias relacionadas con la infraestructura
+                    y el espacio público de Bogotá.
+                </p>
+                <span class="footer-meta">ODS 11 · Prototipo académico · 2026</span>
+            </div>
+
+            <nav aria-label="Mapa del sitio">
+                <h3>Plataforma</h3>
+                <ul>
+                    <li><a href="explorar.html">Explorar reportes</a></li>
+                    <li><a href="crear.html" aria-current="page">Crear un reporte</a></li>
+                    <li><a href="seguimiento.html">Seguimiento</a></li>
+                </ul>
+            </nav>
+
+            <nav aria-label="Información del proyecto">
+                <h3>Información</h3>
+                <ul>
+                    <li><a href="nosotros.html">Nosotros y ODS 11</a></li>
+                    <li><a href="nosotros.html#preguntas-frecuentes">Preguntas frecuentes</a></li>
+                    <li><a href="nosotros.html#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+
+            <!-- Estas páginas se desarrollarán con el resto del proyecto. -->
+            <nav aria-label="Información legal y accesibilidad">
+                <h3>Legal y accesibilidad</h3>
+                <ul>
+                    <li><a href="privacidad.html">Política de privacidad</a></li>
+                    <li><a href="terminos.html">Términos de uso</a></li>
+                    <li><a href="accesibilidad.html">Accesibilidad</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 Mejora Bogotá — Contenido bajo licencia CC BY-SA 4.0</p>
+            <p>Mejora Bogotá no sustituye los canales oficiales ni los servicios de emergencia.</p>
+        </div>
+    </footer>
+</body>
+</html>

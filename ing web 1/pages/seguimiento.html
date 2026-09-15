@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="es-CO">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Consulta el seguimiento de tus reportes en Mejora Bogotá y conoce la diferencia entre el código de la plataforma y el radicado oficial.">
+    <meta name="theme-color" content="#0756a3">
+
+    <title>Mejora Bogotá | Seguimiento de reportes</title>
+
+    <!-- Hoja de estilos compartida con las demás páginas -->
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <a class="skip-link" href="#contenido-principal">
+        Saltar al contenido principal
+    </a>
+
+    <!-- 1. ENCABEZADO Y NAVEGACIÓN PRINCIPAL -->
+    <header class="navbar">
+        <a class="logo" href="index.html" aria-label="Mejora Bogotá, ir al inicio">
+            <strong>Mejora <span>Bogotá</span></strong>
+            <small>ODS 11 · Ciudades y comunidades sostenibles</small>
+        </a>
+
+        <nav class="nav-links" aria-label="Navegación principal">
+            <a href="index.html">Inicio</a>
+            <a href="explorar.html">Explorar reportes</a>
+            <a href="seguimiento.html" class="active" aria-current="page">
+                Seguimiento
+            </a>
+            <a href="nosotros.html">Nosotros y ODS 11</a>
+        </nav>
+
+        <div class="nav-btn">
+            <a href="crear.html" class="btn-primary">Crear reporte</a>
+        </div>
+    </header>
+
+    <main id="contenido-principal" class="container-main" tabindex="-1">
+
+        <!-- 2. PRESENTACIÓN Y FORMULARIO DE CONSULTA -->
+        <section class="tracking-header section-spacing" aria-labelledby="titulo-principal">
+            <p class="section-label">Consulta tus reportes</p>
+
+            <h1 id="titulo-principal">Seguimiento de incidencias</h1>
+
+            <p>
+                Revisa las novedades de tu reporte y la información disponible
+                sobre su gestión ante la entidad correspondiente.
+            </p>
+
+            <p id="aviso-demostracion" class="demo-notice" role="note">
+                <strong>Vista de demostración.</strong>
+                El reporte y las fechas de esta página son ficticios.
+            </p>
+
+            <form id="formulario-seguimiento" class="tracking-search"
+                  action="seguimiento.html" method="get">
+
+                <label for="codigo-reporte">Código de Mejora Bogotá</label>
+
+                <div class="search-controls">
+                    <input
+                        type="text"
+                        id="codigo-reporte"
+                        name="codigo"
+                        placeholder="Ejemplo: MB-00125"
+                        minlength="8"
+                        maxlength="15"
+                        pattern="[Mm][Bb]-[0-9]{5,12}"
+                        title="Escribe MB- seguido de entre 5 y 12 números. Ejemplo: MB-00125."
+                        autocapitalize="characters"
+                        spellcheck="false"
+                        aria-describedby="ayuda-codigo estado-buscador"
+                        required
+                    >
+
+                    <!-- Habilitar al conectar la consulta con JavaScript y los datos. -->
+                    <button type="submit" class="btn-primary"
+                            aria-describedby="estado-buscador" disabled>
+                        Consultar
+                    </button>
+                </div>
+
+                <p id="ayuda-codigo" class="form-help">
+                    Utiliza el código entregado por Mejora Bogotá al registrar
+                    la incidencia. El radicado oficial es un número diferente.
+                </p>
+
+                <p id="estado-buscador" class="form-help">
+                    La consulta de códigos todavía no está habilitada.
+                    El caso de abajo es un ejemplo de cómo verás el seguimiento.
+                </p>
+
+                <!-- Espacios para los mensajes de la futura consulta. -->
+                <p id="estado-consulta" class="form-status"
+                   role="status" aria-atomic="true"></p>
+
+                <p id="error-consulta" class="form-error"
+                   role="alert" hidden></p>
+            </form>
+        </section>
+
+        <!-- Mostrar únicamente cuando una consulta no encuentre coincidencias. -->
+        <section id="sin-resultados" class="empty-state section-spacing"
+                 aria-labelledby="titulo-sin-resultados" hidden>
+
+            <h2 id="titulo-sin-resultados">No encontramos ese reporte</h2>
+
+            <p>
+                Revisa el código y vuelve a intentarlo. Si necesitas ayuda,
+                utiliza la sección de contacto del proyecto.
+            </p>
+
+            <a href="#codigo-reporte" class="btn-secondary">
+                Revisar el código
+            </a>
+
+            <a href="nosotros.html#contacto" class="text-link">
+                Ir a contacto
+            </a>
+        </section>
+
+        <!-- 3. RESULTADO DEMOSTRATIVO Y AYUDA -->
+        <div class="tracking-layout section-spacing">
+
+            <!-- Sustituir el ejemplo por el resultado real al conectar los datos. -->
+            <section id="resultado-reporte" class="report-tracking-card"
+                     aria-labelledby="titulo-reporte"
+                     aria-describedby="aviso-demostracion">
+
+                <header class="report-header">
+                    <h2 id="titulo-reporte">Reporte MB-00125</h2>
+
+                    <span class="status-badge status-reviewed">
+                        Revisado por el equipo
+                    </span>
+                </header>
+
+                <section class="report-summary" aria-labelledby="titulo-resumen">
+                    <h3 id="titulo-resumen">Resumen de la incidencia</h3>
+
+                    <p>
+                        Luminaria apagada en la Calle 67 con Carrera 11.
+                        La falta de iluminación dificulta el paso de peatones
+                        durante la noche.
+                    </p>
+
+                    <dl class="report-data">
+                        <div>
+                            <dt>Categoría</dt>
+                            <dd>Alumbrado público</dd>
+                        </div>
+
+                        <div>
+                            <dt>Localidad</dt>
+                            <dd>Chapinero</dd>
+                        </div>
+
+                        <div>
+                            <dt>Ubicación reportada</dt>
+                            <dd>Calle 67 con Carrera 11, Bogotá</dd>
+                        </div>
+
+                        <div>
+                            <dt>Fecha de registro</dt>
+                            <dd>
+                                <time datetime="2026-09-13T10:20:00-05:00">
+                                    13 de septiembre de 2026, 10:20 a. m.
+                                </time>
+                            </dd>
+                        </div>
+
+                        <div>
+                            <dt>Última actualización</dt>
+                            <dd>
+                                <time datetime="2026-09-13T16:40:00-05:00">
+                                    13 de septiembre de 2026, 4:40 p. m.
+                                </time>
+                            </dd>
+                        </div>
+                    </dl>
+                </section>
+
+                <section class="official-tracking" aria-labelledby="titulo-gestion">
+                    <h3 id="titulo-gestion">Gestión ante la entidad</h3>
+
+                    <p>
+                        Registrar un reporte en Mejora Bogotá y radicarlo
+                        en un canal oficial son pasos diferentes.
+                    </p>
+
+                    <dl class="report-data">
+                        <div>
+                            <dt>Código de Mejjora Bogotá</dt>
+                            <dd>MB-00125</dd>
+                        </div>
+
+                        <div>
+                            <dt>Entidad destinataria</dt>
+                            <dd>Pendiente de confirmar</dd>
+                        </div>
+
+                        <div>
+                            <dt>Radicado oficial</dt>
+                            <dd>Sin radicado registrado</dd>
+                        </div>
+
+                        <div>
+                            <dt>Respuesta de la entidad</dt>
+                            <dd>No hay una respuesta registrada</dd>
+                        </div>
+                    </dl>
+
+                    <p class="form-help">
+                        El radicado se incorpora cuando exista una constancia
+                        de recepción del canal oficial. La revisión del equipo
+                        no significa que una entidad ya haya recibido el caso.
+                    </p>
+
+                    <a href="https://bogota.gov.co/servicios/bogota-te-escucha"
+                       class="text-link"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        Ir a Bogotá Te Escucha (abre otra pestaña)
+                    </a>
+                </section>
+
+                <section class="report-progress" aria-labelledby="titulo-cronologia">
+                    <h3 id="titulo-cronologia">Cronología del reporte</h3>
+
+                    <ol class="timeline">
+                        <li class="timeline-item is-complete">
+                            <strong>Recibido en Mejora Bogotá</strong>
+
+                            <p>
+                                <time datetime="2026-09-13T10:20:00-05:00">
+                                    13 de septiembre de 2026, 10:20 a. m.
+                                </time>
+                            </p>
+
+                            <p>Origen: registro de la plataforma.</p>
+                        </li>
+
+                        <li class="timeline-item is-current" aria-current="step">
+                            <strong>
+                                Revisado por el equipo — etapa actual
+                            </strong>
+
+                            <p>
+                                <time datetime="2026-09-13T16:40:00-05:00">
+                                    13 de septiembre de 2026, 4:40 p. m.
+                                </time>
+                            </p>
+
+                            <p>Origen: equipo de Mejora Bogotá.</p>
+                        </li>
+
+                        <li class="timeline-item is-pending">
+                            <strong>
+                                Radicado oficialmente — pendiente
+                            </strong>
+
+                            <p>
+                                Se añadirá el número y la fecha de recepción oficial.
+                            </p>
+                        </li>
+
+                        <li class="timeline-item is-pending">
+                            <strong>
+                                Respuesta de la entidad — pendiente
+                            </strong>
+
+                            <p>
+                                Se registrará la respuesta recibida y su fecha.
+                            </p>
+                        </li>
+
+                        <li class="timeline-item is-pending">
+                            <strong>
+                                Solución verificada — pendiente
+                            </strong>
+
+                            <p>
+                                Se requiere evidencia revisada de la solución.
+                            </p>
+                        </li>
+                    </ol>
+                </section>
+            </section>
+
+            <aside class="tracking-help" aria-labelledby="titulo-ayuda">
+                <h2 id="titulo-ayuda">Cómo continuar el seguimiento</h2>
+
+                <h3>Conserva tu código</h3>
+
+                <p>
+                    Guarda el código de Mejora Bogotá para identificar tu reporte
+                    en las próximas consultas.
+                </p>
+
+                <h3>Si ya radicaste el caso</h3>
+
+                <p>
+                    Conserva también el radicado oficial y la constancia de
+                    recepción entregada por el canal que utilizaste.
+                </p>
+
+                <h3>Comprueba las novedades</h3>
+
+                <p>
+                    Revisa la fecha y el origen de cada actualización.
+                    Una respuesta de la entidad no implica que el daño
+                    ya esté reparado.
+                </p>
+
+                <div class="tracking-actions">
+                    <a href="explorar.html" class="btn-secondary">
+                        Explorar reportes
+                    </a>
+
+                    <a href="crear.html" class="btn-primary">
+                        Crear otro reporte
+                    </a>
+                </div>
+            </aside>
+        </div>
+
+        <!-- 4. PREGUNTAS FRECUENTES -->
+        <section class="tracking-faq section-spacing"
+                 aria-labelledby="titulo-preguntas">
+
+            <h2 id="titulo-preguntas">Preguntas sobre el seguimiento</h2>
+
+            <details class="faq-item">
+                <summary>
+                    ¿Mi código de Mejora Bogotá es un radicado oficial?
+                </summary>
+
+                <p>
+                    No. El código identifica el reporte dentro de la plataforma.
+                    El radicado oficial lo entrega el canal que recibe la petición.
+                </p>
+            </details>
+
+            <details class="faq-item">
+                <summary>
+                    ¿Qué significa «Revisado por el equipo»?
+                </summary>
+
+                <p>
+                    Significa que el equipo revisó la información del reporte.
+                    Todavía puede faltar la radicación ante la entidad
+                    o una respuesta de esta.
+                </p>
+            </details>
+
+            <details class="faq-item">
+                <summary>
+                    ¿Cuándo aparece como solucionado?
+                </summary>
+
+                <p>
+                    Cuando se registra y revisa evidencia de que la incidencia
+                    fue atendida. Recibir una respuesta no basta para marcar
+                    el problema como solucionado.
+                </p>
+            </details>
+        </section>
+    </main>
+
+    <!-- 5. PIE DE PÁGINA COMPARTIDO -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div>
+                <h2 class="footer-brand">
+                    Mejora <span>Bogotá</span>
+                </h2>
+
+                <p>
+                    Plataforma cívica para registrar, organizar y consultar
+                    incidencias relacionadas con la infraestructura
+                    y el espacio público de Bogotá.
+                </p>
+
+                <span class="footer-meta">
+                    ODS 11 · Prototipo académico · 2026
+                </span>
+            </div>
+
+            <nav aria-label="Mapa del sitio">
+                <h3>Plataforma</h3>
+
+                <ul>
+                    <li>
+                        <a href="explorar.html">Explorar reportes</a>
+                    </li>
+
+                    <li>
+                        <a href="crear.html">Crear un reporte</a>
+                    </li>
+
+                    <li>
+                        <a href="seguimiento.html" aria-current="page">
+                            Seguimiento
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <nav aria-label="Información del proyecto">
+                <h3>Información</h3>
+
+                <ul>
+                    <li>
+                        <a href="nosotros.html">Nosotros y ODS 11</a>
+                    </li>
+
+                    <li>
+                        <a href="nosotros.html#preguntas-frecuentes">
+                            Preguntas frecuentes
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="nosotros.html#contacto">Contacto</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Estas páginas se desarrollarán con el resto del proyecto. -->
+            <nav aria-label="Información legal y accesibilidad">
+                <h3>Legal y accesibilidad</h3>
+
+                <ul>
+                    <li>
+                        <a href="privacidad.html">Política de privacidad</a>
+                    </li>
+
+                    <li>
+                        <a href="terminos.html">Términos de uso</a>
+                    </li>
+
+                    <li>
+                        <a href="accesibilidad.html">Accesibilidad</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="footer-bottom">
+            <p>
+                © 2026 Mejora Bogotá —
+                Contenido bajo licencia CC BY-SA 4.0
+            </p>
+
+            <p>
+                Mejora Bogotá no sustituye los canales oficiales
+                ni los servicios de emergencia.
+            </p>
+        </div>
+    </footer>
+</body>
+</html>

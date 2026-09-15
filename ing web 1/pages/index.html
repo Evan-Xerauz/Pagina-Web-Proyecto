@@ -1,131 +1,270 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-CO">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FixGuide — Inicio</title>
-    <!-- Hoja de estilos principal del proyecto -->
+    <meta name="description" content="Mejora Bogotá es una plataforma de participación ciudadana para reportar, ubicar y dar seguimiento a incidencias en las vías y espacios públicos de Bogotá.">
+    <meta name="theme-color" content="#0756a3">
+
+    <title>Mejora Bogotá | Participación ciudadana</title>
+
+    <!-- Hoja de estilos global de la plataforma -->
     <link rel="stylesheet" href="../css/style.css">
 </head>
+
 <body>
 
-    <!-- HEADER -->
+    <!-- Acceso directo para personas que navegan con teclado -->
+    <a class="skip-link" href="#contenido-principal">
+        Saltar al contenido principal
+    </a>
+
+    <!-- ========================================== -->
+    <!-- 1. ENCABEZADO Y NAVEGACIÓN PRINCIPAL        -->
+    <!-- ========================================== -->
     <header class="navbar">
-        <!-- Logotipo y span decorativo -->
-        <div class="logo"><strong>Fix<span>Guide</span></strong></div>
-        
-        <!-- navegación accesibilidad ARIA -->
+        <a class="logo" href="index.html" aria-label="Mejora Bogotá, ir al inicio">
+            <strong>Mejora <span>Bogotá</span></strong>
+            <small>ODS 11 · Ciudades y comunidades sostenibles</small>
+        </a>
+
         <nav class="nav-links" aria-label="Navegación principal">
-            <a href="index.html" class="active">Inicio</a>
-            <a href="guias.html">Guías</a>
-            <a href="verguia.html">Ver guía</a>
-            <a href="aportar.html">Aportar</a>
+            <a href="index.html" class="active" aria-current="page">Inicio</a>
+            <a href="explorar.html">Explorar reportes</a>
+            <a href="seguimiento.html">Seguimiento</a>
+            <a href="nosotros.html">Nosotros y ODS 11</a>
         </nav>
 
-        <!-- Botón para contribuir -->
         <div class="nav-btn">
-            <a href="aportar.html" class="btn-primary">+ Aportar</a>
+            <a href="crear.html" class="btn-primary">Crear reporte</a>
         </div>
     </header>
 
-    <!-- VISTA MAIN -->
-    <main>
-        <!-- Banner de Presentación -->
-        <section class="hero">
-            <!-- Insignia temática alineada al ODS 9 (Industria, Innovación e Infraestructura) -->
-            <span class="ods-badge">ODS 9 — EDUCACIÓN TÉCNICA SOSTENIBLE</span>
-            <h1>Repara tú mismo.<br><span class="highlight">Aprende. No deseches.</span></h1>
-            <p>Guías paso a paso para reparar portátiles, celulares y consolas.<br>Gratuitas, verificadas y en español.</p>
-            
-            <!-- Formulario de búsqueda rápida vinculado a la vista de guías -->
-            <form class="search-box" action="guias.html" method="GET">
-                <input type="text" placeholder="¿Qué dispositivo necesitas reparar hoy?" aria-label="Buscar dispositivo">
-                <button type="submit">Buscar &rarr;</button>
-            </form>
+    <!-- ========================================== -->
+    <!-- 2. CONTENIDO PRINCIPAL                     -->
+    <!-- ========================================== -->
+    <main id="contenido-principal" class="container-main">
+
+        <!-- Portada principal -->
+        <section class="hero-section" aria-labelledby="titulo-principal">
+            <div class="hero-content">
+                <p class="section-label">Participación ciudadana por una Bogotá mejor</p>
+                
+                <h1 id="titulo-principal">
+                    Transforma la infraestructura de Bogotá, reporte a reporte
+                </h1>
+                
+                <p>
+                    Informa sobre problemas en las vías y espacios públicos, conoce el canal de atención relacionado y participa en su seguimiento.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="crear.html" class="btn-primary">Crear un reporte</a>
+                    <a href="explorar.html" class="btn-secondary">Ver reportes activos</a>
+                </div>
+
+                <div class="emergency-note" role="note">
+                    <strong>¿Existe peligro inmediato?</strong> Comunícate con la Línea de Emergencias 123. Esta plataforma no sustituye los servicios de emergencia.
+                </div>
+            </div>
+
+            <figure class="hero-map-preview">
+                <img src="../assets/img/mapa-bogota.jpg" alt="Vista previa del mapa de Bogotá con marcadores de reportes ciudadanos" width="720" height="480" loading="eager">
+                <figcaption>Consulta las incidencias registradas por la comunidad.</figcaption>
+            </figure>
         </section>
 
-        <!-- Sección de Categorías de Dispositivos -->
-        <section class="categories-section">
-            <header class="section-title">
-                <h2>Categorías</h2>
-                <p>Selecciona el tipo de dispositivo para explorar sus guías.</p>
-            </header>
+        <!-- ========================================== -->
+        <!-- 3. EXPLICACIÓN DEL FUNCIONAMIENTO           -->
+        <!-- ========================================== -->
+        <section class="how-it-works section-spacing" aria-labelledby="titulo-funcionamiento">
+            <div class="section-heading">
+                <p class="section-label">Proceso sencillo</p>
+                <h2 id="titulo-funcionamiento">¿Cómo funciona Mejora Bogotá?</h2>
+                <p>Cuatro pasos para documentar una incidencia y facilitar su seguimiento.</p>
+            </div>
 
-            <!-- Contenedor flexible de tarjetas de categoría -->
-            <div class="cards-container">
-                <!-- Tarjeta 1: Portátiles -->
-                <article class="category-card">
-                    <div class="card-icon" aria-hidden="true">💻</div>
-                    <h3>Portátiles</h3>
-                    <p class="card-sub">MacBook, Dell, HP, Lenovo...</p>
-                    <a href="guias.html" class="card-link">4 guías disponibles &rarr;</a>
-                </article>
+            <ol class="steps-grid">
+                <li class="step-card">
+                    <span class="step-number" aria-hidden="true">01</span>
+                    <h3>Identifica</h3>
+                    <p>Encuentra un problema en una vía o espacio público de tu localidad.</p>
+                </li>
+                <li class="step-card">
+                    <span class="step-number" aria-hidden="true">02</span>
+                    <h3>Reporta</h3>
+                    <p>Selecciona la categoría, describe el caso, ubícalo y adjunta evidencia.</p>
+                </li>
+                <li class="step-card">
+                    <span class="step-number" aria-hidden="true">03</span>
+                    <h3>Consulta</h3>
+                    <p>Guarda el código interno para revisar las novedades y el estado del reporte.</p>
+                </li>
+                <li class="step-card">
+                    <span class="step-number" aria-hidden="true">04</span>
+                    <h3>Verifica</h3>
+                    <p>Confirma si el problema continúa o aporta evidencia cuando haya sido solucionado.</p>
+                </li>
+            </ol>
+        </section>
 
-                <!-- Tarjeta 2: Celulares -->
-                <article class="category-card">
-                    <div class="card-icon" aria-hidden="true">📱</div>
-                    <h3>Celulares</h3>
-                    <p class="card-sub">iPhone, Samsung, Xiaomi...</p>
-                    <a href="guias.html" class="card-link">2 guías disponibles &rarr;</a>
-                </article>
+        <!-- ========================================== -->
+        <!-- 4. CATEGORÍAS DE REPORTES                   -->
+        <!-- ========================================== -->
+        <section class="categories-section section-spacing" aria-labelledby="titulo-categorias">
+            <div class="section-heading">
+                <p class="section-label">Explora por tema</p>
+                <h2 id="titulo-categorias">Categorías de reportes</h2>
+                <p>Selecciona una categoría para consultar los casos registrados.</p>
+            </div>
 
-                <!-- Tarjeta 3: Consolas -->
-                <article class="category-card">
-                    <div class="card-icon" aria-hidden="true">🎮</div>
-                    <h3>Consolas</h3>
-                    <p class="card-sub">PlayStation, Xbox, Nintendo...</p>
-                    <a href="guias.html" class="card-link">2 guías disponibles &rarr;</a>
-                </article>
+            <div class="categories-grid">
+                <a href="explorar.html?categoria=baches" class="category-card">
+                    <span class="category-icon" aria-hidden="true">🕳️</span>
+                    <strong>Baches y vías</strong>
+                    <small>Daños en la malla vial</small>
+                </a>
+                <a href="explorar.html?categoria=semaforos" class="category-card">
+                    <span class="category-icon" aria-hidden="true">🚦</span>
+                    <strong>Semáforos</strong>
+                    <small>Fallas e intermitencias</small>
+                </a>
+                <a href="explorar.html?categoria=alumbrado" class="category-card">
+                    <span class="category-icon" aria-hidden="true">💡</span>
+                    <strong>Alumbrado</strong>
+                    <small>Luminarias y postes</small>
+                </a>
+                <a href="explorar.html?categoria=senalizacion" class="category-card">
+                    <span class="category-icon" aria-hidden="true">🚸</span>
+                    <strong>Señalización</strong>
+                    <small>Señales dañadas o ausentes</small>
+                </a>
+                <a href="explorar.html?categoria=basuras" class="category-card">
+                    <span class="category-icon" aria-hidden="true">🗑️</span>
+                    <strong>Basuras</strong>
+                    <small>Residuos y escombros</small>
+                </a>
+                <a href="explorar.html?categoria=andenes" class="category-card">
+                    <span class="category-icon" aria-hidden="true">♿</span>
+                    <strong>Andenes</strong>
+                    <small>Accesibilidad peatonal</small>
+                </a>
+                <a href="explorar.html?categoria=alcantarillado" class="category-card">
+                    <span class="category-icon" aria-hidden="true">🌧️</span>
+                    <strong>Alcantarillado</strong>
+                    <small>Sumideros y drenaje</small>
+                </a>
+                <a href="explorar.html?categoria=otros" class="category-card">
+                    <span class="category-icon" aria-hidden="true">📍</span>
+                    <strong>Otros</strong>
+                    <small>Otras incidencias urbanas</small>
+                </a>
             </div>
         </section>
+
+        <!-- ========================================== -->
+        <!-- 5. ESTADÍSTICAS DEMOSTRATIVAS               -->
+        <!-- ========================================== -->
+        <section class="stats-section section-spacing" aria-labelledby="titulo-impacto" aria-describedby="aviso-datos-demostrativos">
+            <div class="section-heading">
+                <p class="section-label">Datos del prototipo</p>
+                <h2 id="titulo-impacto">Impacto ciudadano en cifras</h2>
+                <p id="aviso-datos-demostrativos">Estas cifras son demostrativas y serán reemplazadas por información real cuando la plataforma entre en operación.</p>
+            </div>
+
+            <dl class="stats-grid">
+                <div class="stat-box">
+                    <dt>Reportes registrados</dt>
+                    <dd>1.420</dd>
+                </div>
+                <div class="stat-box">
+                    <dt>En revisión</dt>
+                    <dd>315</dd>
+                </div>
+                <div class="stat-box">
+                    <dt>Soluciones verificadas</dt>
+                    <dd>890</dd>
+                </div>
+                <div class="stat-box">
+                    <dt>Localidades representadas</dt>
+                    <dd>20</dd>
+                </div>
+            </dl>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- 6. RELACIÓN CON EL ODS 11                  -->
+        <!-- ========================================== -->
+        <section class="ods-section section-spacing" aria-labelledby="titulo-ods">
+            <div class="ods-content">
+                <p class="section-label">Objetivo de Desarrollo Sostenible</p>
+                <h2 id="titulo-ods">Nuestro compromiso con el ODS 11</h2>
+                <p>
+                    Mejora Bogotá promueve la participación ciudadana, la seguridad vial y el cuidado de los espacios urbanos, aportando al Objetivo de Desarrollo Sostenible 11: <strong>Ciudades y comunidades sostenibles</strong>.
+                </p>
+                <a href="nosotros.html#ods-11" class="text-link">Conoce la relación del proyecto con el ODS 11</a>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- 7. INVITACIÓN A PARTICIPAR                 -->
+        <!-- ========================================== -->
+        <section class="final-cta section-spacing" aria-labelledby="titulo-participar">
+            <div>
+                <h2 id="titulo-participar">Tu reporte puede ayudar a mejorar tu localidad</h2>
+                <p>Documenta la incidencia con información clara para que la comunidad pueda conocerla y hacerle seguimiento.</p>
+            </div>
+            <a href="crear.html" class="btn-primary">Comenzar un reporte</a>
+        </section>
+
     </main>
 
-    <!-- FOOTER -->
+    <!-- ========================================== -->
+    <!-- 8. PIE DE PÁGINA                           -->
+    <!-- ========================================== -->
     <footer class="footer">
         <div class="footer-grid">
-            <!-- Columna de información de la plataforma -->
+            <!-- Presentación de la plataforma -->
             <div>
-                <h3>FixGuide</h3>
-                <p>Plataforma educativa de reparación electrónica sostenible. Alineada con el ODS 9 de la ONU.</p>
-                <span class="footer-meta">ODS 9 · v2.0 · 2026</span>
+                <p class="footer-brand"><strong>Mejora <span>Bogotá</span></strong></p>
+                <p>Plataforma cívica para registrar, organizar y consultar incidencias relacionadas con la infraestructura y el espacio público de Bogotá.</p>
+                <span class="footer-meta">ODS 11 · Prototipo académico · 2026</span>
             </div>
 
-            <!-- Columna de Mapa del Sitio -->
+            <!-- Enlaces principales -->
             <nav aria-label="Mapa del sitio">
-                <h4>MAPA DEL SITIO</h4>
+                <h3>Plataforma</h3>
                 <ul>
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="guias.html">Guías</a></li>
-                    <li><a href="verguia.html">Ver guía</a></li>
-                    <li><a href="aportar.html">Aportar</a></li>
+                    <li><a href="explorar.html">Explorar reportes</a></li>
+                    <li><a href="crear.html">Crear un reporte</a></li>
+                    <li><a href="seguimiento.html">Seguimiento</a></li>
                 </ul>
             </nav>
 
-            <!-- Columna de Categorías -->
-            <div>
-                <h4>CATEGORÍAS</h4>
+            <!-- Información sobre el proyecto -->
+            <nav aria-label="Información del proyecto">
+                <h3>Información</h3>
                 <ul>
-                    <li>Portátiles</li>
-                    <li>Celulares</li>
-                    <li>Consolas</li>
+                    <li><a href="nosotros.html">Nosotros y ODS 11</a></li>
+                    <li><a href="nosotros.html#preguntas-frecuentes">Preguntas frecuentes</a></li>
+                    <li><a href="nosotros.html#contacto">Contacto</a></li>
                 </ul>
-            </div>
+            </nav>
 
-            <!-- Columna de Estándares de Accesibilidad -->
-            <div>
-                <h4>ACCESIBILIDAD</h4>
+            <!-- Páginas legales y accesibilidad -->
+            <nav aria-label="Información legal y accesibilidad">
+                <h3>Legal y accesibilidad</h3>
                 <ul>
-                    <li>WCAG 2.1 AA</li>
-                    <li>Diseño adaptable</li>
-                    <li>Navegación por teclado</li>
+                    <li><a href="privacidad.html">Política de privacidad</a></li>
+                    <li><a href="terminos.html">Términos de uso</a></li>
+                    <li><a href="accesibilidad.html">Accesibilidad</a></li>
                 </ul>
-            </div>
+            </nav>
         </div>
 
-        <!-- Créditos de cierre de la plataforma -->
         <div class="footer-bottom">
-            <p>© 2026 FixGuide — Contenido bajo licencia CC BY-SA 4.0</p>
-            <p>Proyecto Académico — Ingeniería Web</p>
+            <p>© 2026 Mejora Bogotá — Contenido bajo licencia CC BY-SA 4.0</p>
+            <p>Mejora Bogotá não sustituye los canales oficiales ni los servicios de emergencia.</p>
         </div>
     </footer>
 
