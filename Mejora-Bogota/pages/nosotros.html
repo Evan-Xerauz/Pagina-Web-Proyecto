@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mejora Bogotá | Nosotros y ODS 11</title>
+    <!-- Hoja de estilos compartida por todas las páginas -->
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <a class="skip-link" href="#contenido-principal">Saltar al contenido</a>
+
+    <!-- Marquesina: el texto se mueve con una animación del CSS -->
+    <div class="marquesina">
+        <p class="mensajes">Mejora Bogotá · Cuidemos nuestra ciudad</p>
+    </div>
+
+    <!-- Encabezado: nombre del proyecto, menú y botón principal -->
+    <header class="navbar">
+        <a class="logo" href="../index.html">
+            <strong>Mejora <span>Bogotá</span></strong>
+            <small>ODS 11 · Ciudades y comunidades sostenibles</small>
+        </a>
+        <nav aria-label="Menú principal">
+            <ul class="nav-links">
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="explorar.html">Explorar</a></li>
+                <li><a href="seguimiento.html">Seguimiento</a></li>
+                <li><a href="nosotros.html" class="active" aria-current="page">Nosotros y ODS 11</a></li>
+            </ul>
+        </nav>
+        <a href="crear.html" class="btn-primary">Crear reporte</a>
+    </header>
+
+    <!-- Contenido principal: cada página tiene un solo h1 -->
+    <main id="contenido-principal" class="container-main">
+        <!-- Presentación del proyecto -->
+        <section class="section-spacing">
+            <p class="section-label">Nuestro proyecto de clase</p>
+            <h1>Nosotros y el ODS 11</h1>
+            <p>Mejora Bogotá es una propuesta académica para organizar información sobre problemas en las vías y los espacios públicos de la ciudad.</p>
+            <div class="about-grid">
+                <article class="about-card">
+                    <h2>Propósito</h2>
+                    <p>Promover la observación del entorno y la participación en el cuidado de los espacios compartidos.</p>
+                </article>
+                <article class="about-card">
+                    <h2>Alcance</h2>
+                    <p>Presentar páginas, formularios y reportes de ejemplo construidos con HTML y CSS.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Relación entre el tema y las secciones del sitio -->
+        <section class="section-spacing" id="ods-11">
+            <h2>¿Cómo se relaciona con el ODS 11?</h2>
+            <p>El proyecto trabaja ideas relacionadas con ciudades y comunidades sostenibles.</p>
+            <div class="ods-grid">
+                <article class="ods-card">
+                    <h3>Accesibilidad</h3>
+                    <p>Identificar obstáculos en los andenes y dificultades para el paso de las personas.</p>
+                </article>
+                <article class="ods-card">
+                    <h3>Espacio público</h3>
+                    <p>Reconocer problemas de iluminación, residuos y deterioro de las vías.</p>
+                </article>
+                <article class="ods-card">
+                    <h3>Participación</h3>
+                    <p>Aprender a describir situaciones de la comunidad de forma clara y respetuosa.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Preguntas: details y summary se abren sin programación -->
+        <section class="section-spacing" id="preguntas-frecuentes">
+            <h2>Preguntas frecuentes</h2>
+            <details class="faq-item">
+                <summary>¿Los reportes son reales?</summary>
+                <p>No. Son ejemplos escritos para mostrar la organización del proyecto.</p>
+            </details>
+            <details class="faq-item">
+                <summary>¿El formulario guarda la información?</summary>
+                <p>No. Puedes completar los campos como ejercicio, pero el envío está deshabilitado.</p>
+            </details>
+            <details class="faq-item">
+                <summary>¿Por qué se mueven el texto y la imagen?</summary>
+                <p>El archivo CSS incluye animaciones con keyframes y efectos al pasar el mouse.</p>
+            </details>
+            <details class="faq-item">
+                <summary>¿La página pertenece a una entidad oficial?</summary>
+                <p>No. Es una práctica académica de diseño web.</p>
+            </details>
+        </section>
+
+        <!-- Contacto: presentación visual del formulario -->
+        <section class="section-spacing" id="contacto">
+            <h2>Contacto</h2>
+            <p class="demo-notice">Formulario de práctica. Los mensajes no se envían ni se guardan.</p>
+            <form action="#contacto" method="get">
+                <div class="form-field">
+                    <label for="nombre-contacto">Nombre de prueba *</label>
+                    <input id="nombre-contacto" name="nombre" type="text" maxlength="100" required>
+                </div>
+                <div class="form-field">
+                    <label for="correo-contacto">Correo de ejemplo *</label>
+                    <input id="correo-contacto" name="correo" type="email" placeholder="ejemplo@example.com" required>
+                </div>
+                <div class="form-field">
+                    <label for="mensaje-contacto">Mensaje *</label>
+                    <textarea id="mensaje-contacto" name="mensaje" rows="5" minlength="10" maxlength="1000" required></textarea>
+                </div>
+                <button type="submit" disabled>Enviar mensaje (no disponible)</button>
+                <button type="reset" class="btn-secondary">Limpiar campos</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Pie de página: enlaces de navegación e información -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div>
+                <h2>Mejora Bogotá</h2>
+                <p>Proyecto académico sobre el cuidado de las vías y los espacios públicos.</p>
+                <p>Los casos presentados son ejemplos ficticios.</p>
+            </div>
+            <nav aria-label="Páginas del proyecto">
+                <h2>Páginas</h2>
+                <ul>
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="crear.html">Crear reporte</a></li>
+                    <li><a href="explorar.html">Explorar reportes</a></li>
+                    <li><a href="seguimiento.html">Seguimiento</a></li>
+                    <li><a href="nosotros.html#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+            <nav aria-label="Información del prototipo">
+                <h2>Información</h2>
+                <ul>
+                    <li><a href="nosotros.html#ods-11">Relación con el ODS 11</a></li>
+                    <li><a href="privacidad.html">Privacidad</a></li>
+                    <li><a href="terminos.html">Condiciones del prototipo</a></li>
+                    <li><a href="accesibilidad.html">Accesibilidad</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="footer-bottom">
+            <p>Mejora Bogotá · Práctica de HTML y CSS · 2026</p>
+        </div>
+    </footer>
+</body>
+</html>

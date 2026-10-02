@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mejora Bogotá | Crear reporte</title>
+    <!-- Hoja de estilos compartida por todas las páginas -->
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <a class="skip-link" href="#contenido-principal">Saltar al contenido</a>
+
+    <!-- Marquesina: el texto se mueve con una animación del CSS -->
+    <div class="marquesina">
+        <p class="mensajes">Mejora Bogotá · Cuidemos nuestra ciudad</p>
+    </div>
+
+    <!-- Encabezado: nombre del proyecto, menú y botón principal -->
+    <header class="navbar">
+        <a class="logo" href="../index.html">
+            <strong>Mejora <span>Bogotá</span></strong>
+            <small>ODS 11 · Ciudades y comunidades sostenibles</small>
+        </a>
+        <nav aria-label="Menú principal">
+            <ul class="nav-links">
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="explorar.html">Explorar</a></li>
+                <li><a href="seguimiento.html">Seguimiento</a></li>
+                <li><a href="nosotros.html">Nosotros y ODS 11</a></li>
+            </ul>
+        </nav>
+        <a href="crear.html" class="btn-primary" aria-current="page">Crear reporte</a>
+    </header>
+
+    <!-- Contenido principal: cada página tiene un solo h1 -->
+    <main id="contenido-principal" class="container-main">
+        <!-- Presentación de la página -->
+        <section class="section-spacing">
+            <p class="section-label">Participa en el cuidado de tu ciudad</p>
+            <h1>Crear un reporte</h1>
+            <p>Practica cómo describir una incidencia. Los campos marcados con * son obligatorios en el diseño del formulario.</p>
+            <p class="demo-notice">Formulario de práctica: no guarda ni envía reportes. Usa datos de ejemplo.</p>
+        </section>
+
+        <!-- Formulario: fieldset agrupa los campos y legend nombra cada grupo -->
+        <section class="section-spacing">
+            <h2>Datos de la incidencia</h2>
+            <form action="#" method="get">
+                <!-- Primer grupo: descripción -->
+                <fieldset>
+                    <legend>1. Describe el problema</legend>
+                    <div class="form-field">
+                        <label for="categoria">Categoría *</label>
+                        <select id="categoria" name="categoria" required>
+                            <option value="">Selecciona una categoría</option>
+                        <option value="baches">Baches y vías</option>
+                        <option value="semaforos">Semáforos</option>
+                        <option value="alumbrado">Alumbrado</option>
+                        <option value="senalizacion">Señalización</option>
+                        <option value="basuras">Basuras</option>
+                        <option value="andenes">Andenes</option>
+                        <option value="alcantarillado">Alcantarillado</option>
+                        <option value="otros">Otros</option>
+                        </select>
+                    </div>
+                    <div class="form-field">
+                        <label for="titulo-reporte">Título del reporte *</label>
+                        <input id="titulo-reporte" name="titulo" type="text" minlength="10" maxlength="120" placeholder="Ejemplo: luminaria apagada en la Calle 67" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="descripcion">Descripción *</label>
+                        <textarea id="descripcion" name="descripcion" rows="5" minlength="20" maxlength="2000" placeholder="Explica qué sucede y cómo afecta a la comunidad." required></textarea>
+                    </div>
+                    <div class="form-field">
+                        <label for="fecha-observacion">Fecha de observación</label>
+                        <input id="fecha-observacion" name="fecha" type="date">
+                    </div>
+                    <div class="form-field">
+                        <label for="riesgo">Riesgo observado</label>
+                        <select id="riesgo" name="riesgo">
+                            <option value="sin-informar">Sin informar</option>
+                            <option value="bajo">Bajo</option>
+                            <option value="medio">Medio</option>
+                            <option value="alto">Alto</option>
+                        </select>
+                    </div>
+                </fieldset>
+
+                <!-- Segundo grupo: ubicación escrita -->
+                <fieldset>
+                    <legend>2. Indica dónde ocurre</legend>
+                    <div class="form-field">
+                        <label for="localidad">Localidad *</label>
+                        <select id="localidad" name="localidad" required>
+                            <option value="">Selecciona una localidad</option>
+                        <option value="usaquen">Usaquén</option>
+                        <option value="chapinero">Chapinero</option>
+                        <option value="santa-fe">Santa Fe</option>
+                        <option value="san-cristobal">San Cristóbal</option>
+                        <option value="usme">Usme</option>
+                        <option value="tunjuelito">Tunjuelito</option>
+                        <option value="bosa">Bosa</option>
+                        <option value="kennedy">Kennedy</option>
+                        <option value="fontibon">Fontibón</option>
+                        <option value="engativa">Engativá</option>
+                        <option value="suba">Suba</option>
+                        <option value="barrios-unidos">Barrios Unidos</option>
+                        <option value="teusaquillo">Teusaquillo</option>
+                        <option value="los-martires">Los Mártires</option>
+                        <option value="antonio-narino">Antonio Nariño</option>
+                        <option value="puente-aranda">Puente Aranda</option>
+                        <option value="la-candelaria">La Candelaria</option>
+                        <option value="rafael-uribe-uribe">Rafael Uribe Uribe</option>
+                        <option value="ciudad-bolivar">Ciudad Bolívar</option>
+                        <option value="sumapaz">Sumapaz</option>
+                        </select>
+                    </div>
+                    <div class="form-field">
+                        <label for="direccion">Dirección o referencia *</label>
+                        <input id="direccion" name="direccion" type="text" minlength="8" maxlength="200" placeholder="Ejemplo: Calle 67 con Carrera 11" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="barrio">Barrio o vereda</label>
+                        <input id="barrio" name="barrio" type="text" maxlength="100">
+                    </div>
+                </fieldset>
+
+                <!-- Tercer grupo: selector de archivo del navegador -->
+                <fieldset>
+                    <legend>3. Fotografía de prueba</legend>
+                    <label for="foto">Selecciona una imagen</label>
+                    <input id="foto" name="foto" type="file" accept="image/jpeg,image/png,image/webp">
+                    <p class="form-help">El navegador permite elegir el archivo, pero esta página no lo sube ni lo guarda.</p>
+                </fieldset>
+
+                <!-- Confirmación de lectura y botones -->
+                <div class="form-check">
+                    <input id="acepta-prueba" name="acepta-prueba" type="checkbox" required>
+                    <label for="acepta-prueba">Entiendo que es una práctica y usaré datos ficticios.</label>
+                </div>
+                <!-- Envío deshabilitado porque el proyecto es estático -->
+                <button type="submit" disabled>Guardar reporte (no disponible)</button>
+                <button type="reset" class="btn-secondary">Limpiar campos</button>
+            </form>
+        </section>
+
+        <!-- Enlaces a las páginas relacionadas -->
+        <section class="section-spacing">
+            <h2>Consulta los ejemplos</h2>
+            <p>Puedes revisar los casos disponibles antes de practicar con el formulario.</p>
+            <a href="explorar.html" class="btn-secondary">Explorar reportes</a>
+        </section>
+    </main>
+
+    <!-- Pie de página: enlaces de navegación e información -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div>
+                <h2>Mejora Bogotá</h2>
+                <p>Proyecto académico sobre el cuidado de las vías y los espacios públicos.</p>
+                <p>Los casos presentados son ejemplos ficticios.</p>
+            </div>
+            <nav aria-label="Páginas del proyecto">
+                <h2>Páginas</h2>
+                <ul>
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="crear.html">Crear reporte</a></li>
+                    <li><a href="explorar.html">Explorar reportes</a></li>
+                    <li><a href="seguimiento.html">Seguimiento</a></li>
+                    <li><a href="nosotros.html#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+            <nav aria-label="Información del prototipo">
+                <h2>Información</h2>
+                <ul>
+                    <li><a href="nosotros.html#ods-11">Relación con el ODS 11</a></li>
+                    <li><a href="privacidad.html">Privacidad</a></li>
+                    <li><a href="terminos.html">Condiciones del prototipo</a></li>
+                    <li><a href="accesibilidad.html">Accesibilidad</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="footer-bottom">
+            <p>Mejora Bogotá · Práctica de HTML y CSS · 2026</p>
+        </div>
+    </footer>
+</body>
+</html>

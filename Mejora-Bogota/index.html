@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mejora Bogotá | Inicio</title>
+    <!-- Hoja de estilos compartida por todas las páginas -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <a class="skip-link" href="#contenido-principal">Saltar al contenido</a>
+
+    <!-- Marquesina: el texto se mueve con una animación del CSS -->
+    <div class="marquesina">
+        <p class="mensajes">Mejora Bogotá · Cuidemos nuestra ciudad</p>
+    </div>
+
+    <!-- Encabezado: nombre del proyecto, menú y botón principal -->
+    <header class="navbar">
+        <a class="logo" href="index.html">
+            <strong>Mejora <span>Bogotá</span></strong>
+            <small>ODS 11 · Ciudades y comunidades sostenibles</small>
+        </a>
+        <nav aria-label="Menú principal">
+            <ul class="nav-links">
+                <li><a href="index.html" class="active" aria-current="page">Inicio</a></li>
+                <li><a href="pages/explorar.html">Explorar</a></li>
+                <li><a href="pages/seguimiento.html">Seguimiento</a></li>
+                <li><a href="pages/nosotros.html">Nosotros y ODS 11</a></li>
+            </ul>
+        </nav>
+        <a href="pages/crear.html" class="btn-primary">Crear reporte</a>
+    </header>
+
+    <!-- Contenido principal: cada página tiene un solo h1 -->
+    <main id="contenido-principal" class="container-main">
+        <!-- Portada: texto, botones e imagen con movimiento -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <p class="section-label">Participación ciudadana</p>
+                <h1>Una Bogotá mejor comienza con nuestro barrio</h1>
+                <p>Conoce cómo describir problemas en las vías y los espacios públicos de la ciudad.</p>
+                <div class="hero-buttons">
+                    <a href="pages/crear.html" class="btn-primary">Crear un reporte</a>
+                    <a href="pages/explorar.html" class="btn-secondary">Ver ejemplos</a>
+                </div>
+            </div>
+            <figure class="hero-map-preview">
+                <img src="images/ciudad.svg" width="720" height="480" alt="Ilustración de edificios, árboles, una calle y un semáforo">
+                <figcaption>Una ciudad que cuidamos entre todos. Ilustración, no mapa real.</figcaption>
+            </figure>
+        </section>
+
+        <!-- Pasos: h2 para la sección y h3 para cada tarjeta -->
+        <section class="section-spacing" id="como-funciona">
+            <header class="section-heading">
+                <h2>¿Cómo funciona la idea del proyecto?</h2>
+                <p>Cuatro pasos para conocer y documentar una incidencia.</p>
+            </header>
+            <ol class="steps-grid">
+                <li class="step-card">
+                    <span class="step-number">01</span>
+                    <h3>Identifica</h3>
+                    <p>Reconoce un problema en una vía o espacio público.</p>
+                </li>
+                <li class="step-card">
+                    <span class="step-number">02</span>
+                    <h3>Describe</h3>
+                    <p>Escribe qué sucede y dónde se encuentra el lugar.</p>
+                </li>
+                <li class="step-card">
+                    <span class="step-number">03</span>
+                    <h3>Consulta</h3>
+                    <p>Explora los reportes de ejemplo organizados por categoría.</p>
+                </li>
+                <li class="step-card">
+                    <span class="step-number">04</span>
+                    <h3>Revisa</h3>
+                    <p>Observa cómo se presentaría el seguimiento de un caso.</p>
+                </li>
+            </ol>
+            <p class="demo-notice">Esta práctica usa únicamente HTML y CSS. Los formularios no guardan ni envían información.</p>
+        </section>
+
+        <!-- Categorías: cada enlace lleva a una sección de Explorar -->
+        <section class="section-spacing" id="categorias">
+            <header class="section-heading">
+                <h2>Categorías de reportes</h2>
+                <p>Selecciona un tema para conocer sus ejemplos.</p>
+            </header>
+            <div class="categories-grid">
+            <a class="category-card" href="pages/explorar.html#baches">
+                <h3>Baches y vías</h3>
+                <p>Daños en las calles</p>
+            </a>
+            <a class="category-card" href="pages/explorar.html#semaforos">
+                <h3>Semáforos</h3>
+                <p>Fallas en los semáforos</p>
+            </a>
+            <a class="category-card" href="pages/explorar.html#alumbrado">
+                <h3>Alumbrado</h3>
+                <p>Luminarias apagadas</p>
+            </a>
+            <a class="category-card" href="pages/explorar.html#senalizacion">
+                <h3>Señalización</h3>
+                <p>Señales dañadas o ausentes</p>
+            </a>
+            <a class="category-card" href="pages/explorar.html#basuras">
+                <h3>Basuras</h3>
+                <p>Residuos y escombros</p>
+            </a>
+            <a class="category-card" href="pages/explorar.html#andenes">
+                <h3>Andenes</h3>
+                <p>Paso seguro para peatones</p>
+            </a>
+            <a class="category-card" href="pages/explorar.html#alcantarillado">
+                <h3>Alcantarillado</h3>
+                <p>Sumideros y drenajes</p>
+            </a>
+            <a class="category-card" href="pages/explorar.html#otros">
+                <h3>Otros</h3>
+                <p>Otras incidencias urbanas</p>
+            </a>
+            </div>
+        </section>
+
+        <!-- Relación del proyecto con el ODS 11 -->
+        <section class="section-spacing" id="compromiso">
+            <h2>Nuestro compromiso con el ODS 11</h2>
+            <p>Relacionamos el cuidado de las calles, la accesibilidad y la participación ciudadana con la idea de construir ciudades más inclusivas, seguras y sostenibles.</p>
+            <a href="pages/nosotros.html#ods-11" class="btn-secondary">Conocer el proyecto</a>
+        </section>
+    </main>
+
+    <!-- Pie de página: enlaces de navegación e información -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div>
+                <h2>Mejora Bogotá</h2>
+                <p>Proyecto académico sobre el cuidado de las vías y los espacios públicos.</p>
+                <p>Los casos presentados son ejemplos ficticios.</p>
+            </div>
+            <nav aria-label="Páginas del proyecto">
+                <h2>Páginas</h2>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="pages/crear.html">Crear reporte</a></li>
+                    <li><a href="pages/explorar.html">Explorar reportes</a></li>
+                    <li><a href="pages/seguimiento.html">Seguimiento</a></li>
+                    <li><a href="pages/nosotros.html#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+            <nav aria-label="Información del prototipo">
+                <h2>Información</h2>
+                <ul>
+                    <li><a href="pages/nosotros.html#ods-11">Relación con el ODS 11</a></li>
+                    <li><a href="pages/privacidad.html">Privacidad</a></li>
+                    <li><a href="pages/terminos.html">Condiciones del prototipo</a></li>
+                    <li><a href="pages/accesibilidad.html">Accesibilidad</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="footer-bottom">
+            <p>Mejora Bogotá · Práctica de HTML y CSS · 2026</p>
+        </div>
+    </footer>
+</body>
+</html>
