@@ -1,0 +1,466 @@
+/* Paleta de colores
+Azul: #0756a3
+Verde: #087b52
+Amarillo: #ffd700
+Blanco: #ffffff
+Gris claro: #f4f6f8
+Texto: #333333
+*/
+
+/* Selector universal */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Configuración general */
+body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333333;
+    background-color: #ffffff;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    color: #0756a3;
+}
+
+h1, h2, h3, p {
+    margin-bottom: 12px;
+}
+
+h1 {
+    font-size: 36px;
+    line-height: 1.3;
+}
+
+h2 {
+    font-size: 28px;
+    color: #0756a3;
+}
+
+h3 {
+    font-size: 20px;
+}
+
+ul, ol {
+    padding-left: 24px;
+}
+
+.container-main {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-spacing {
+    padding: 35px 0;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.section-label {
+    color: #087b52;
+    font-weight: bold;
+}
+
+/**************** Marquesina: texto en movimiento ****************/
+.marquesina {
+    padding: 8px 28px;
+    background-color: #0756a3;
+    color: #ffffff;
+    overflow: hidden;
+    text-align: center;
+}
+
+.mensajes {
+    margin: 0;
+    animation: desplazar 4s ease-in-out infinite alternate;
+}
+
+@keyframes desplazar {
+    from {
+        transform: translateX(-15px);
+    }
+    to {
+        transform: translateX(15px);
+    }
+}
+
+/**************** Encabezado y menú ****************/
+.navbar {
+    display: flex; /* Organiza el nombre, el menú y el botón */
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 5%;
+    border-bottom: 4px solid #ffd700;
+}
+
+.logo {
+    font-size: 25px;
+    color: #0756a3;
+    text-decoration: none;
+}
+
+.logo span {
+    color: #087b52;
+}
+
+.logo small {
+    display: block;
+    font-size: 13px;
+}
+
+.nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    padding: 0;
+    list-style: none;
+}
+
+.nav-links a {
+    color: #333333;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover, .nav-links .active {
+    color: #087b52;
+    text-decoration: underline;
+}
+
+.skip-link {
+    display: inline-block;
+    padding: 5px 5%;
+    font-size: 14px;
+}
+
+/**************** Portada con degradado ****************/
+.hero-section {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 30px;
+    padding: 40px;
+    margin-top: 25px;
+    background: linear-gradient(120deg, #0756a3, #087b52);
+    color: #ffffff;
+    border-radius: 10px;
+}
+
+.hero-content, .hero-map-preview {
+    flex: 1 1 300px;
+    min-width: 0;
+}
+
+.hero-section .section-label {
+    color: #ffd700;
+}
+
+/* El texto aparece al abrir la página */
+.hero-content {
+    animation: aparecer 1.5s ease;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* La ilustración sube y baja suavemente */
+.hero-map-preview img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px #00000033;
+    animation: moverImagen 3s ease-in-out infinite alternate;
+}
+
+@keyframes moverImagen {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-12px);
+    }
+}
+
+.hero-map-preview figcaption {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 14px;
+}
+
+/**************** Botones y enlaces de categorías ****************/
+.hero-buttons, .category-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.btn-primary, .btn-secondary, button {
+    display: inline-block;
+    padding: 10px 18px;
+    margin: 5px 0;
+    border: 1px solid #0756a3;
+    border-radius: 5px;
+    background-color: #0756a3;
+    color: #ffffff;
+    font: inherit;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-secondary {
+    background-color: #ffffff;
+    color: #0756a3;
+}
+
+.btn-primary:hover, .btn-secondary:hover, button:hover {
+    background-color: #087b52;
+    color: #ffffff;
+}
+
+/* El envío permanece deshabilitado en esta práctica */
+button:disabled {
+    background-color: #dddddd;
+    color: #555555;
+    border-color: #999999;
+    cursor: not-allowed;
+}
+
+/**************** Tarjetas: pasos, categorías e información ****************/
+.steps-grid, .categories-grid, .about-grid, .ods-grid, .footer-grid {
+    display: flex;
+    flex-wrap: wrap; /* Las tarjetas bajan si falta espacio */
+    gap: 20px;
+    padding: 0;
+    list-style: none;
+}
+
+.steps-grid > *, .categories-grid > *, .about-grid > *, .ods-grid > *, .footer-grid > * {
+    flex: 1 1 220px;
+    min-width: 0;
+}
+
+.step-card, .category-card, .about-card, .ods-card, .report-card {
+    padding: 20px;
+    background-color: #f4f6f8;
+    color: #333333;
+    border-top: 4px solid #ffd700;
+    border-radius: 8px;
+    box-shadow: 0 3px 8px #0000001a;
+    text-decoration: none;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Efecto al pasar el mouse */
+.step-card:hover, .category-card:hover, .report-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px #00000033;
+}
+
+.category-card {
+    text-align: center;
+}
+
+.step-number {
+    font-size: 30px;
+    font-weight: bold;
+    color: #0756a3;
+}
+
+/**************** Formularios ****************/
+form {
+    max-width: 800px;
+    padding: 20px;
+    background-color: #f4f6f8;
+    border-radius: 8px;
+}
+
+fieldset {
+    min-width: 0;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #bbbbbb;
+}
+
+.form-field, .form-check {
+    margin-bottom: 18px;
+}
+
+label, legend {
+    font-weight: bold;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input, select, textarea {
+    width: 100%;
+    min-width: 0;
+    padding: 10px;
+    border: 1px solid #999999;
+    border-radius: 4px;
+    background-color: #ffffff;
+    color: #333333;
+    font: inherit;
+}
+
+textarea {
+    resize: vertical;
+}
+
+/* La casilla no ocupa todo el ancho */
+input[type="checkbox"] {
+    width: auto;
+}
+
+.form-check label {
+    display: inline;
+}
+
+.form-help {
+    font-size: 14px;
+    color: #555555;
+}
+
+/**************** Avisos, reportes y preguntas ****************/
+.demo-notice {
+    padding: 15px;
+    margin: 20px 0;
+    background-color: #fff8d6;
+    border-left: 4px solid #ffd700;
+}
+
+.report-card {
+    margin-bottom: 20px;
+}
+
+.report-data dt {
+    font-weight: bold;
+}
+
+.report-data dd, .timeline {
+    margin-bottom: 15px;
+}
+
+.badge {
+    display: inline-block;
+    padding: 4px 10px;
+    margin-bottom: 12px;
+    border-radius: 5px;
+    background-color: #ffd700;
+    color: #333333;
+    font-size: 14px;
+}
+
+.status-reviewing, .status-reviewed {
+    background-color: #0756a3;
+    color: #ffffff;
+}
+
+.faq-item {
+    padding: 15px 0;
+    border-bottom: 1px solid #dddddd;
+}
+
+summary {
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/**************** Pie de página con degradado ****************/
+.footer {
+    margin-top: 30px;
+    padding: 35px 5%;
+    background: linear-gradient(90deg, #0756a3, #087b52);
+    color: #ffffff;
+}
+
+.footer h2 {
+    color: #ffffff;
+    font-size: 22px;
+}
+
+.footer a {
+    color: #ffffff;
+}
+
+.footer ul {
+    padding: 0;
+    list-style: none;
+}
+
+.footer a:hover {
+    color: #ffd700;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid #ffffff;
+}
+
+/**************** Ajustes para celular ****************/
+@media (max-width: 600px) {
+    .navbar, .nav-links {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .hero-section {
+        padding: 20px;
+    }
+
+    .hero-content, .hero-map-preview {
+        flex-basis: auto;
+        width: 100%;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+}
+
+
+/* Elementos que el JavaScript muestra cuando se necesitan */
+[hidden] {
+    display: none !important;
+}
+
+/* Imagen seleccionada en el formulario */
+.vista-previa {
+    max-width: 220px;
+    margin: 15px 0;
+    border-radius: 8px;
+}

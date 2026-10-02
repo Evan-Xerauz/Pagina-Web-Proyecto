@@ -1,0 +1,64 @@
+MEJORA BOGOTÁ — HTML, CSS Y JAVASCRIPT
+
+ABRIR EL PROYECTO
+1. Extrae el ZIP completo y abre su carpeta en Visual Studio Code.
+2. Abre index.html con Live Server.
+3. Mantén la misma dirección y el mismo navegador para consultar tus reportes.
+No abras el proyecto con doble clic: el almacenamiento entre páginas requiere
+un mismo sitio, como el que crea Live Server.
+
+ARCHIVO JAVASCRIPT
+js/app.js contiene las funciones, separadas por comentarios /* ... */.
+Los HTML del ZIP ya tienen el script conectado.
+
+En index.html:
+<script src="js/app.js" defer></script>
+
+En las páginas de la carpeta pages:
+<script src="../js/app.js" defer></script>
+
+Si copias solo app.js sobre la versión anterior, también necesitas los HTML
+actualizados: contienen los identificadores y contenedores que usa el script.
+Usar el ZIP completo evita tener que hacer esas conexiones manualmente.
+
+FUNCIONES POR SECCIONES
+1. Datos generales: nombre con el que se guarda la lista y categorías.
+2. Ayudas: mostrar mensajes, crear elementos, validar y preparar búsquedas.
+3. Leer reportes: recuperar la lista de localStorage sin borrar datos dañados.
+4. Crear tarjetas: mostrar la información del reporte como texto.
+5. Crear reporte: validar los campos, generar el código y guardar la lista.
+6. Fotografía: comprobar tipo y tamaño y mostrar una vista previa.
+7. Explorar: agregar reportes locales y filtrar por texto y categoría.
+8. Seguimiento: buscar el código entre los ejemplos y los reportes guardados.
+9. Contacto: validar el formulario e indicar que no se ha enviado el mensaje.
+10. Inicio: activar cada función en su página correspondiente.
+
+CONCEPTOS PARA EXPLICAR EN CLASE
+const: guarda una referencia que no se vuelve a asignar.
+let: guarda un valor que puede cambiar.
+function: agrupa instrucciones que hacen una tarea.
+if: comprueba una condición.
+forEach: recorre una lista de elementos.
+getElementById: busca un elemento del HTML por su id.
+addEventListener: espera un evento, como un clic o un envío de formulario.
+preventDefault: evita la acción automática del navegador.
+localStorage: conserva texto en el navegador para el mismo sitio.
+JSON.stringify: convierte la lista de reportes en texto para guardarla.
+JSON.parse: recupera la lista a partir de ese texto.
+textContent: muestra el contenido como texto, sin interpretarlo como HTML.
+
+RECORRIDO PARA PROBARLO
+1. En Crear reporte, completa los campos y marca la casilla de prueba.
+2. Guarda el reporte y copia el código MB- que aparece.
+3. Pulsa Ver mi reporte o búscalo en Seguimiento.
+4. En Explorar, busca el título o código y prueba una categoría.
+5. Usa un código que no exista para revisar el aviso de búsqueda sin resultado.
+6. Selecciona una foto JPG, PNG o WebP de máximo 5 MB para ver su vista previa.
+
+ALCANCE
+Los reportes se guardan únicamente en el navegador y sitio donde los creaste.
+Las fotografías no se guardan. El formulario de contacto valida los datos,
+pero no guarda ni envía el mensaje. No se contactan entidades oficiales.
+Borrar los datos del sitio en el navegador elimina los reportes locales.
+Los tres casos iniciales siguen siendo ejemplos ficticios.
+Las animaciones del texto y la imagen continúan en el CSS.
